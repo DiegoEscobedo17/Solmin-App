@@ -1,0 +1,2 @@
+# Solmin-App
+Automatización Solmin
