@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block titulo %}  Lista Soldadoras  {% endblock %}
+
+{% block contenido  %}  
+
+<div class="card">
+    <div class="card-header">
+        Listar Soldadoras
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Soldadoras</h4>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id Soldadora</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Nro. Serie</th>
+                    <th>Code</th>
+                    <th>Horometro</th>
+                    <th>Diagnostico</th>
+                    <th>Foto Ingreso</th>
+                    <th>Foto Reparacion</th>
+                    <th>Foto Salida</th>
+                    <th>Nro. Orden</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Miller</td>
+                    <td>X52</td>
+                    <td>4786214</td>
+                    <td>Null</td>
+                    <td>Null</td>
+                    <td>Falla para soldar</td>
+                    <td>imagen1.jpg</td>
+                    <td>imagen2.jpg</td>
+                    <td>imagen3.jpg</td>
+                    <td>1</td>
+                    <td>Editar | Borrar </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="card-footer text-muted">
+        
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+    

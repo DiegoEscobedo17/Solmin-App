@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block titulo %}  Lista Encargados  {% endblock %}
+
+{% block contenido  %}  
+
+<div class="card">
+    <div class="card-header">
+        Listar Encargados
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Encargados</h4>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Receptor</th>
+                    <th>Servicio</th>
+                    <th>Falla</th>
+                    <th>Nro. Orden</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Christian</td>
+                    <td>Mantenimiento</td>
+                    <td>no deja soldar</td>
+                    <td>1</td>
+                    <td>Editar | Borrar </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="card-footer text-muted">
+        
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+    

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block titulo %}  Lista Planchados  {% endblock %}
+
+{% block contenido  %}  
+
+<div class="card">
+    <div class="card-header">
+        Listar Planchados
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Planchados</h4>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Cod_p</th>
+                    <th>Cantidad</th>
+                    <th>Descripcion</th>
+                    <th>Nro. Orden</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>Planchado y Pintura</td>
+                    <td>1</td>
+                    <td>Editar | Borrar </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="card-footer text-muted">
+        
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+    
