@@ -1,0 +1,1432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cartillafinal" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b6735779-d468-4952-8332-ffeb4df83576">
+	<property name="ireport.zoom" value="0.7513148009015804"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="96"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F5F5DC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#FFFFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#00FFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TH" mode="Opaque" backcolor="#E67373">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_CH" mode="Opaque" backcolor="#E6CFCF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_TH" mode="Opaque" backcolor="#E67373">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_CH" mode="Opaque" backcolor="#E6CFCF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_TH" mode="Opaque" backcolor="#E67373">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_CH" mode="Opaque" backcolor="#E6CFCF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_TH" mode="Opaque" backcolor="#E67373">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_CH" mode="Opaque" backcolor="#E6CFCF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_TH" mode="Opaque" backcolor="#E67373">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_CH" mode="Opaque" backcolor="#E6CFCF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 11">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 11_TH" mode="Opaque" backcolor="#7D3F3F">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 11_CH" mode="Opaque" backcolor="#E6CFCF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 11_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 12">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 12_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 12_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 12_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 13">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 13_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 13_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 13_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 14">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 14_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 14_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 14_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 15">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 15_TH" mode="Opaque" backcolor="#C66377">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 15_CH" mode="Opaque" backcolor="#E6CFD3">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 15_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 16">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 16_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 16_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 16_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 17">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 17_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 17_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 17_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="planchado" uuid="87710d27-c6e6-4c32-96f9-5698d119195a">
+		<parameter name="Nro_Orden" class="java.lang.Integer">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[SELECT
+     orden.Nro_Orden,orden.fecha_ingreso,orden.fecha_salida,
+     accesorios.`cod_p` AS accesorios_cod_p,
+     accesorios.`Cantidad` AS accesorios_Cantidad,
+     accesorios.`Descripcion` AS accesorios_Descripcion,
+     accesorios.`Nro_Orden` AS accesorios_Nro_Orden,
+     cliente.`Nombre` AS cliente_Nombre,
+     cliente.`Direccion` AS cliente_Direccion,
+     cliente.`RUC` AS cliente_RUC,
+     cliente.`DNI` AS cliente_DNI,
+     cliente.`Encargado` AS cliente_Encargado,
+     cliente.`Telefono` AS cliente_Telefono,
+     cliente.`Nro_Orden` AS cliente_Nro_Orden,
+     elementos.`Antorcha` AS elementos_Antorcha,
+     elementos.`Porta_electrodo` AS elementos_Porta_electrodo,
+     elementos.`pinza_masa` AS elementos_pinza_masa,
+     elementos.`cable_acometida` AS elementos_cable_acometida,
+     elementos.`clavija` AS elementos_clavija,
+     elementos.`regulador_gas` AS elementos_regulador_gas,
+     elementos.`manguera_gas` AS elementos_manguera_gas,
+     elementos.`pernos` AS elementos_pernos,
+     elementos.`ridillos` AS elementos_ridillos,
+     elementos.`perillas` AS elementos_perillas,
+     elementos.`asas` AS elementos_asas,
+     elementos.`base_ruedas` AS elementos_base_ruedas,
+     elementos.`carrete` AS elementos_carrete,
+     elementos.`consumibles` AS elementos_consumibles,
+     elementos.`chupon` AS elementos_chupon,
+     elementos.`otros` AS elementos_otros,
+     elementos.`Nro_Orden` AS elementos_Nro_Orden,
+     encargado.`Recepcionado_por` AS encargado_Recepcionado_por,
+     encargado.`Servicio` AS encargado_Servicio,
+     encargado.`Falla_reportada` AS encargado_Falla_reportada,
+     encargado.`Nro_Orden` AS encargado_Nro_Orden,
+     planchado.`Cod_p` AS planchado_Cod_p,
+     planchado.`Cantidad` AS planchado_Cantidad,
+     planchado.`Descripcion` AS planchado_Descripcion,
+     planchado.`Nro_Orden` AS planchado_Nro_Orden,
+     soldadora.`Marca` AS soldadora_Marca,
+     soldadora.`Modelo` AS soldadora_Modelo,
+     soldadora.`Nro_Serie` AS soldadora_Nro_Serie,
+     soldadora.`Code` AS soldadora_Code,
+     soldadora.`Email` AS soldadora_Email,
+     soldadora.`Horometro` AS soldadora_Horometro,
+     soldadora.`Diagnostico` AS soldadora_Diagnostico,
+     soldadora.`Foto_Ingreso` AS soldadora_Foto_Ingreso,
+     soldadora.`Foto_Reparacion` AS soldadora_Foto_Reparacion,
+     soldadora.`Foto_Salida` AS soldadora_Foto_Salida,
+     soldadora.`Nro_Orden` AS soldadora_Nro_Orden,
+     orden.`Nro_Orden` AS orden_Nro_Orden,
+     orden.`fecha_ingreso` AS orden_fecha_ingreso,
+     orden.`fecha_salida` AS orden_fecha_salida
+FROM
+     `orden` orden INNER JOIN `accesorios` accesorios ON orden.`Nro_Orden` = accesorios.`Nro_Orden`
+     INNER JOIN `cliente` cliente ON orden.`Nro_Orden` = cliente.`Nro_Orden`
+     INNER JOIN `elementos` elementos ON orden.`Nro_Orden` = elementos.`Nro_Orden`
+     INNER JOIN `encargado` encargado ON orden.`Nro_Orden` = encargado.`Nro_Orden`
+     INNER JOIN `planchado` planchado ON orden.`Nro_Orden` = planchado.`Nro_Orden`
+     INNER JOIN `soldadora` soldadora ON orden.`Nro_Orden` = soldadora.`Nro_Orden`
+WHERE orden.`Nro_Orden` LIKE $P{Nro_Orden}]]>
+		</queryString>
+		<field name="Nro_Orden" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="fecha_ingreso" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="fecha_salida" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="accesorios_cod_p" class="java.lang.Integer"/>
+		<field name="accesorios_Cantidad" class="java.lang.String"/>
+		<field name="accesorios_Descripcion" class="java.lang.String"/>
+		<field name="accesorios_Nro_Orden" class="java.lang.Integer"/>
+		<field name="cliente_Nombre" class="java.lang.String"/>
+		<field name="cliente_Direccion" class="java.lang.String"/>
+		<field name="cliente_RUC" class="java.lang.String"/>
+		<field name="cliente_DNI" class="java.lang.String"/>
+		<field name="cliente_Encargado" class="java.lang.String"/>
+		<field name="cliente_Telefono" class="java.lang.String"/>
+		<field name="cliente_Nro_Orden" class="java.lang.Integer"/>
+		<field name="elementos_Antorcha" class="java.lang.Integer"/>
+		<field name="elementos_Porta_electrodo" class="java.lang.Integer"/>
+		<field name="elementos_pinza_masa" class="java.lang.Integer"/>
+		<field name="elementos_cable_acometida" class="java.lang.Integer"/>
+		<field name="elementos_clavija" class="java.lang.Integer"/>
+		<field name="elementos_regulador_gas" class="java.lang.Integer"/>
+		<field name="elementos_manguera_gas" class="java.lang.Integer"/>
+		<field name="elementos_pernos" class="java.lang.Integer"/>
+		<field name="elementos_ridillos" class="java.lang.Integer"/>
+		<field name="elementos_perillas" class="java.lang.Integer"/>
+		<field name="elementos_asas" class="java.lang.Integer"/>
+		<field name="elementos_base_ruedas" class="java.lang.Integer"/>
+		<field name="elementos_carrete" class="java.lang.Integer"/>
+		<field name="elementos_consumibles" class="java.lang.Integer"/>
+		<field name="elementos_chupon" class="java.lang.Integer"/>
+		<field name="elementos_otros" class="java.lang.Integer"/>
+		<field name="elementos_Nro_Orden" class="java.lang.Integer"/>
+		<field name="encargado_Recepcionado_por" class="java.lang.String"/>
+		<field name="encargado_Servicio" class="java.lang.String"/>
+		<field name="encargado_Falla_reportada" class="java.lang.String"/>
+		<field name="encargado_Nro_Orden" class="java.lang.Integer"/>
+		<field name="planchado_Cod_p" class="java.lang.Integer"/>
+		<field name="planchado_Cantidad" class="java.lang.String"/>
+		<field name="planchado_Descripcion" class="java.lang.String"/>
+		<field name="planchado_Nro_Orden" class="java.lang.Integer"/>
+		<field name="soldadora_Marca" class="java.lang.String"/>
+		<field name="soldadora_Modelo" class="java.lang.String"/>
+		<field name="soldadora_Nro_Serie" class="java.lang.String"/>
+		<field name="soldadora_Code" class="java.lang.String"/>
+		<field name="soldadora_Email" class="java.lang.String"/>
+		<field name="soldadora_Horometro" class="java.lang.String"/>
+		<field name="soldadora_Diagnostico" class="java.lang.String"/>
+		<field name="soldadora_Foto_Ingreso" class="java.lang.Object"/>
+		<field name="soldadora_Foto_Reparacion" class="java.lang.Object"/>
+		<field name="soldadora_Foto_Salida" class="java.lang.Object"/>
+		<field name="soldadora_Nro_Orden" class="java.lang.Integer"/>
+		<field name="orden_Nro_Orden" class="java.lang.Integer"/>
+		<field name="orden_fecha_ingreso" class="java.sql.Date"/>
+		<field name="orden_fecha_salida" class="java.sql.Date"/>
+	</subDataset>
+	<subDataset name="accesorios" uuid="f53012e0-0fc5-412d-9815-42e1255bedf0">
+		<parameter name="Nro_Orden" class="java.lang.Integer">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[SELECT
+     orden.Nro_Orden,orden.fecha_ingreso,orden.fecha_salida,
+     accesorios.`cod_p` AS accesorios_cod_p,
+     accesorios.`Cantidad` AS accesorios_Cantidad,
+     accesorios.`Descripcion` AS accesorios_Descripcion,
+     accesorios.`Nro_Orden` AS accesorios_Nro_Orden,
+     cliente.`Nombre` AS cliente_Nombre,
+     cliente.`Direccion` AS cliente_Direccion,
+     cliente.`RUC` AS cliente_RUC,
+     cliente.`DNI` AS cliente_DNI,
+     cliente.`Encargado` AS cliente_Encargado,
+     cliente.`Telefono` AS cliente_Telefono,
+     cliente.`Nro_Orden` AS cliente_Nro_Orden,
+     elementos.`Antorcha` AS elementos_Antorcha,
+     elementos.`Porta_electrodo` AS elementos_Porta_electrodo,
+     elementos.`pinza_masa` AS elementos_pinza_masa,
+     elementos.`cable_acometida` AS elementos_cable_acometida,
+     elementos.`clavija` AS elementos_clavija,
+     elementos.`regulador_gas` AS elementos_regulador_gas,
+     elementos.`manguera_gas` AS elementos_manguera_gas,
+     elementos.`pernos` AS elementos_pernos,
+     elementos.`ridillos` AS elementos_ridillos,
+     elementos.`perillas` AS elementos_perillas,
+     elementos.`asas` AS elementos_asas,
+     elementos.`base_ruedas` AS elementos_base_ruedas,
+     elementos.`carrete` AS elementos_carrete,
+     elementos.`consumibles` AS elementos_consumibles,
+     elementos.`chupon` AS elementos_chupon,
+     elementos.`otros` AS elementos_otros,
+     elementos.`Nro_Orden` AS elementos_Nro_Orden,
+     encargado.`Recepcionado_por` AS encargado_Recepcionado_por,
+     encargado.`Servicio` AS encargado_Servicio,
+     encargado.`Falla_reportada` AS encargado_Falla_reportada,
+     encargado.`Nro_Orden` AS encargado_Nro_Orden,
+     orden.`Nro_Orden` AS orden_Nro_Orden,
+     orden.`fecha_ingreso` AS orden_fecha_ingreso,
+     orden.`fecha_salida` AS orden_fecha_salida,
+     planchado.`Cod_p` AS planchado_Cod_p,
+     planchado.`Cantidad` AS planchado_Cantidad,
+     planchado.`Descripcion` AS planchado_Descripcion,
+     planchado.`Nro_Orden` AS planchado_Nro_Orden,
+     soldadora.`Marca` AS soldadora_Marca,
+     soldadora.`Modelo` AS soldadora_Modelo,
+     soldadora.`Nro_Serie` AS soldadora_Nro_Serie,
+     soldadora.`Code` AS soldadora_Code,
+     soldadora.`Email` AS soldadora_Email,
+     soldadora.`Horometro` AS soldadora_Horometro,
+     soldadora.`Diagnostico` AS soldadora_Diagnostico,
+     soldadora.`Foto_Ingreso` AS soldadora_Foto_Ingreso,
+     soldadora.`Foto_Reparacion` AS soldadora_Foto_Reparacion,
+     soldadora.`Foto_Salida` AS soldadora_Foto_Salida,
+     soldadora.`Nro_Orden` AS soldadora_Nro_Orden
+FROM
+     `orden` orden INNER JOIN `accesorios` accesorios ON orden.`Nro_Orden` = accesorios.`Nro_Orden`
+     INNER JOIN `cliente` cliente ON orden.`Nro_Orden` = cliente.`Nro_Orden`
+     INNER JOIN `elementos` elementos ON orden.`Nro_Orden` = elementos.`Nro_Orden`
+     INNER JOIN `encargado` encargado ON orden.`Nro_Orden` = encargado.`Nro_Orden`
+     INNER JOIN `planchado` planchado ON orden.`Nro_Orden` = planchado.`Nro_Orden`
+     INNER JOIN `soldadora` soldadora ON orden.`Nro_Orden` = soldadora.`Nro_Orden`
+WHERE orden.`Nro_Orden` LIKE $P{Nro_Orden}]]>
+		</queryString>
+		<field name="Nro_Orden" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="fecha_ingreso" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="fecha_salida" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="accesorios_cod_p" class="java.lang.Integer"/>
+		<field name="accesorios_Cantidad" class="java.lang.String"/>
+		<field name="accesorios_Descripcion" class="java.lang.String"/>
+		<field name="accesorios_Nro_Orden" class="java.lang.Integer"/>
+		<field name="cliente_Nombre" class="java.lang.String"/>
+		<field name="cliente_Direccion" class="java.lang.String"/>
+		<field name="cliente_RUC" class="java.lang.String"/>
+		<field name="cliente_DNI" class="java.lang.String"/>
+		<field name="cliente_Encargado" class="java.lang.String"/>
+		<field name="cliente_Telefono" class="java.lang.String"/>
+		<field name="cliente_Nro_Orden" class="java.lang.Integer"/>
+		<field name="elementos_Antorcha" class="java.lang.Integer"/>
+		<field name="elementos_Porta_electrodo" class="java.lang.Integer"/>
+		<field name="elementos_pinza_masa" class="java.lang.Integer"/>
+		<field name="elementos_cable_acometida" class="java.lang.Integer"/>
+		<field name="elementos_clavija" class="java.lang.Integer"/>
+		<field name="elementos_regulador_gas" class="java.lang.Integer"/>
+		<field name="elementos_manguera_gas" class="java.lang.Integer"/>
+		<field name="elementos_pernos" class="java.lang.Integer"/>
+		<field name="elementos_ridillos" class="java.lang.Integer"/>
+		<field name="elementos_perillas" class="java.lang.Integer"/>
+		<field name="elementos_asas" class="java.lang.Integer"/>
+		<field name="elementos_base_ruedas" class="java.lang.Integer"/>
+		<field name="elementos_carrete" class="java.lang.Integer"/>
+		<field name="elementos_consumibles" class="java.lang.Integer"/>
+		<field name="elementos_chupon" class="java.lang.Integer"/>
+		<field name="elementos_otros" class="java.lang.Integer"/>
+		<field name="elementos_Nro_Orden" class="java.lang.Integer"/>
+		<field name="encargado_Recepcionado_por" class="java.lang.String"/>
+		<field name="encargado_Servicio" class="java.lang.String"/>
+		<field name="encargado_Falla_reportada" class="java.lang.String"/>
+		<field name="encargado_Nro_Orden" class="java.lang.Integer"/>
+		<field name="orden_Nro_Orden" class="java.lang.Integer"/>
+		<field name="orden_fecha_ingreso" class="java.sql.Date"/>
+		<field name="orden_fecha_salida" class="java.sql.Date"/>
+		<field name="planchado_Cod_p" class="java.lang.Integer"/>
+		<field name="planchado_Cantidad" class="java.lang.String"/>
+		<field name="planchado_Descripcion" class="java.lang.String"/>
+		<field name="planchado_Nro_Orden" class="java.lang.Integer"/>
+		<field name="soldadora_Marca" class="java.lang.String"/>
+		<field name="soldadora_Modelo" class="java.lang.String"/>
+		<field name="soldadora_Nro_Serie" class="java.lang.String"/>
+		<field name="soldadora_Code" class="java.lang.String"/>
+		<field name="soldadora_Email" class="java.lang.String"/>
+		<field name="soldadora_Horometro" class="java.lang.String"/>
+		<field name="soldadora_Diagnostico" class="java.lang.String"/>
+		<field name="soldadora_Foto_Ingreso" class="java.lang.Object"/>
+		<field name="soldadora_Foto_Reparacion" class="java.lang.Object"/>
+		<field name="soldadora_Foto_Salida" class="java.lang.Object"/>
+		<field name="soldadora_Nro_Orden" class="java.lang.Integer"/>
+	</subDataset>
+	<parameter name="Nro_Orden" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     orden.Nro_Orden,
+     orden.fecha_ingreso,
+     orden.fecha_salida,
+     accesorios.`Cod_p` AS accesorios_Cod_p,
+     accesorios.`Cantidad` AS accesorios_Cantidad,
+     accesorios.`Descripcion` AS accesorios_Descripcion,
+     accesorios.`Nro_Orden` AS accesorios_Nro_Orden,
+     cliente.`Nombre` AS cliente_Nombre,
+     cliente.`Direccion` AS cliente_Direccion,
+     cliente.`RUC` AS cliente_RUC,
+     cliente.`DNI` AS cliente_DNI,
+     cliente.`Encargado` AS cliente_Encargado,
+     cliente.`Telefono` AS cliente_Telefono,
+     cliente.`Nro_Orden` AS cliente_Nro_Orden,
+     elementos.`Antorcha` AS elementos_Antorcha,
+     elementos.`Porta_electrodo` AS elementos_Porta_electrodo,
+     elementos.`pinza_masa` AS elementos_pinza_masa,
+     elementos.`cable_acometida` AS elementos_cable_acometida,
+     elementos.`clavija` AS elementos_clavija,
+     elementos.`regulador_gas` AS elementos_regulador_gas,
+     elementos.`manguera_gas` AS elementos_manguera_gas,
+     elementos.`pernos` AS elementos_pernos,
+     elementos.`ridillos` AS elementos_ridillos,
+     elementos.`perillas` AS elementos_perillas,
+     elementos.`asas` AS elementos_asas,
+     elementos.`base_ruedas` AS elementos_base_ruedas,
+     elementos.`carrete` AS elementos_carrete,
+     elementos.`consumibles` AS elementos_consumibles,
+     elementos.`chupon` AS elementos_chupon,
+     elementos.`otros` AS elementos_otros,
+     elementos.`Nro_Orden` AS elementos_Nro_Orden,
+     encargado.`Recepcionado_por` AS encargado_Recepcionado_por,
+     encargado.`Servicio` AS encargado_Servicio,
+     encargado.`Falla_reportada` AS encargado_Falla_reportada,
+     encargado.`Nro_Orden` AS encargado_Nro_Orden,
+     orden.`Nro_Orden` AS orden_Nro_Orden,
+     orden.`fecha_ingreso` AS orden_fecha_ingreso,
+     orden.`fecha_salida` AS orden_fecha_salida,
+     planchado.`Cod_p` AS planchado_Cod_p,
+     planchado.`Cantidad` AS planchado_Cantidad,
+     planchado.`Descripcion` AS planchado_Descripcion,
+     planchado.`Nro_Orden` AS planchado_Nro_Orden,
+     soldadora.`Marca` AS soldadora_Marca,
+     soldadora.`Modelo` AS soldadora_Modelo,
+     soldadora.`Nro_Serie` AS soldadora_Nro_Serie,
+     soldadora.`Code` AS soldadora_Code,
+     soldadora.`Email` AS soldadora_Email,
+     soldadora.`Horometro` AS soldadora_Horometro,
+     soldadora.`Diagnostico` AS soldadora_Diagnostico,
+     soldadora.`Foto_Ingreso` AS soldadora_Foto_Ingreso,
+     soldadora.`Foto_Reparacion` AS soldadora_Foto_Reparacion,
+     soldadora.`Foto_Salida` AS soldadora_Foto_Salida,
+     soldadora.`Nro_Orden` AS soldadora_Nro_Orden
+FROM
+     `orden` orden INNER JOIN `accesorios` accesorios ON orden.`Nro_Orden` = accesorios.`Nro_Orden`
+     INNER JOIN `cliente` cliente ON orden.`Nro_Orden` = cliente.`Nro_Orden`
+     INNER JOIN `elementos` elementos ON orden.`Nro_Orden` = elementos.`Nro_Orden`
+     INNER JOIN `encargado` encargado ON orden.`Nro_Orden` = encargado.`Nro_Orden`
+     INNER JOIN `planchado` planchado ON orden.`Nro_Orden` = planchado.`Nro_Orden`
+     INNER JOIN `soldadora` soldadora ON orden.`Nro_Orden` = soldadora.`Nro_Orden`
+WHERE orden.`Nro_Orden` LIKE $P{Nro_Orden}]]>
+	</queryString>
+	<field name="Nro_Orden" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_ingreso" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_salida" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="accesorios_Cod_p" class="java.lang.Integer"/>
+	<field name="accesorios_Cantidad" class="java.lang.String"/>
+	<field name="accesorios_Descripcion" class="java.lang.String"/>
+	<field name="accesorios_Nro_Orden" class="java.lang.Integer"/>
+	<field name="cliente_Nombre" class="java.lang.String"/>
+	<field name="cliente_Direccion" class="java.lang.String"/>
+	<field name="cliente_RUC" class="java.lang.String"/>
+	<field name="cliente_DNI" class="java.lang.String"/>
+	<field name="cliente_Encargado" class="java.lang.String"/>
+	<field name="cliente_Telefono" class="java.lang.String"/>
+	<field name="cliente_Nro_Orden" class="java.lang.Integer"/>
+	<field name="elementos_Antorcha" class="java.lang.Integer"/>
+	<field name="elementos_Porta_electrodo" class="java.lang.Integer"/>
+	<field name="elementos_pinza_masa" class="java.lang.Integer"/>
+	<field name="elementos_cable_acometida" class="java.lang.Integer"/>
+	<field name="elementos_clavija" class="java.lang.Integer"/>
+	<field name="elementos_regulador_gas" class="java.lang.Integer"/>
+	<field name="elementos_manguera_gas" class="java.lang.Integer"/>
+	<field name="elementos_pernos" class="java.lang.Integer"/>
+	<field name="elementos_ridillos" class="java.lang.Integer"/>
+	<field name="elementos_perillas" class="java.lang.Integer"/>
+	<field name="elementos_asas" class="java.lang.Integer"/>
+	<field name="elementos_base_ruedas" class="java.lang.Integer"/>
+	<field name="elementos_carrete" class="java.lang.Integer"/>
+	<field name="elementos_consumibles" class="java.lang.Integer"/>
+	<field name="elementos_chupon" class="java.lang.Integer"/>
+	<field name="elementos_otros" class="java.lang.Integer"/>
+	<field name="elementos_Nro_Orden" class="java.lang.Integer"/>
+	<field name="encargado_Recepcionado_por" class="java.lang.String"/>
+	<field name="encargado_Servicio" class="java.lang.String"/>
+	<field name="encargado_Falla_reportada" class="java.lang.String"/>
+	<field name="encargado_Nro_Orden" class="java.lang.Integer"/>
+	<field name="orden_Nro_Orden" class="java.lang.Integer"/>
+	<field name="orden_fecha_ingreso" class="java.sql.Date"/>
+	<field name="orden_fecha_salida" class="java.sql.Date"/>
+	<field name="planchado_Cod_p" class="java.lang.Integer"/>
+	<field name="planchado_Cantidad" class="java.lang.String"/>
+	<field name="planchado_Descripcion" class="java.lang.String"/>
+	<field name="planchado_Nro_Orden" class="java.lang.Integer"/>
+	<field name="soldadora_Marca" class="java.lang.String"/>
+	<field name="soldadora_Modelo" class="java.lang.String"/>
+	<field name="soldadora_Nro_Serie" class="java.lang.String"/>
+	<field name="soldadora_Code" class="java.lang.String"/>
+	<field name="soldadora_Email" class="java.lang.String"/>
+	<field name="soldadora_Horometro" class="java.lang.String"/>
+	<field name="soldadora_Diagnostico" class="java.lang.String"/>
+	<field name="soldadora_Foto_Ingreso" class="java.io.InputStream"/>
+	<field name="soldadora_Foto_Reparacion" class="java.io.InputStream"/>
+	<field name="soldadora_Foto_Salida" class="java.io.InputStream"/>
+	<field name="soldadora_Nro_Orden" class="java.lang.Integer"/>
+	<title>
+		<band height="134" splitType="Stretch">
+			<textField>
+				<reportElement x="372" y="40" width="25" height="20" uuid="9e849541-76be-4346-a0fc-8357beeb4582"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{soldadora_Modelo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="55" height="29" uuid="9b9f3128-768d-4971-878b-95f2f4fc0f95"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[FECHA DE INGRESO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="55" y="58" width="42" height="20" uuid="befe54c4-2bef-44d1-9638-2029d2a63ebf"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{fecha_salida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="332" y="20" width="65" height="20" uuid="b572923a-3f5c-47e5-8d25-5b6f9dff69b4"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{Nro_Orden}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="124" y="58" width="142" height="20" uuid="1273e3fc-bc0f-4984-b4f8-5305af8e4e8a"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[LINCOLN ELECTRIC - ESAB]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="38" width="186" height="20" uuid="204f7da9-2609-4824-9798-49cec69215f5"/>
+				<text><![CDATA[CENTRO DE SERVICIO AUTORIZADO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="372" y="60" width="25" height="20" uuid="3b5f448e-ddbf-4428-b9e6-c29ed99361ef"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{soldadora_Nro_Serie}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="158" y="0" width="150" height="39" uuid="322534d2-6255-4c21-bd9d-3f32353e3769"/>
+				<imageExpression><![CDATA["D:\\Solmin-Web\\Solmin-paginaweb\\img\\logosolmin.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="55" y="9" width="42" height="20" uuid="bf7ccebd-52ab-4098-a224-8595ed943ac2"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{fecha_ingreso}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="49" width="55" height="29" uuid="bda613ae-44b6-4a2b-bff1-0488509fad33"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[FECHA DE SALIDA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="296" y="0" width="112" height="20" uuid="9f5725af-7521-41f2-8ae6-0eeabb93bb45"/>
+				<text><![CDATA[ORDEN DE SERVICIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="296" y="40" width="48" height="20" uuid="125fddef-20ce-47a9-a3cf-e2df03d9bad7"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[MODELO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="296" y="20" width="12" height="20" uuid="f25b35ae-4b46-47e9-a9f2-69da485fe446"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="296" y="60" width="76" height="20" uuid="3d42aa7a-8a6e-4fe1-943b-18142ed90b3b"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[N° DE SERIE:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="408" y="0" width="1" height="132" uuid="144da3be-96f7-46b4-b6a0-97c24b0dc1f1"/>
+			</line>
+			<staticText>
+				<reportElement x="422" y="0" width="100" height="20" uuid="6622d4a6-341c-4d58-93c7-f1990f0ba09b"/>
+				<text><![CDATA[FOTO INGRESO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="702" y="0" width="100" height="20" uuid="c6b6ce3f-0209-440c-91bf-1016d51f8cab"/>
+				<text><![CDATA[FOTO SALIDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="564" y="0" width="100" height="20" uuid="f12d218b-b971-4fda-85dc-5edbb8b6f45f"/>
+				<text><![CDATA[FOTO REPARACIÓN]]></text>
+			</staticText>
+			<image>
+				<reportElement x="422" y="29" width="100" height="83" uuid="1dd54d1c-6c36-4dd5-b78f-8cb8bd6691e1"/>
+				<imageExpression><![CDATA[$F{soldadora_Foto_Ingreso}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="564" y="29" width="100" height="83" uuid="744587b4-bfa1-495a-af0c-eacc4524c66e"/>
+				<imageExpression><![CDATA[$F{soldadora_Foto_Reparacion}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="702" y="29" width="100" height="83" uuid="3dd7bd92-087e-44ce-b98e-01909fa738f8"/>
+				<imageExpression><![CDATA[$F{soldadora_Foto_Salida}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="98" y="111" width="299" height="1" uuid="fb11c49b-e025-4497-8e45-491428c9d3e7"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="92" width="55" height="20" uuid="ad2178b9-ddfd-49fa-9dd9-1e9063a6299d"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[CLIENTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="112" width="68" height="20" uuid="24313a2b-770f-48dc-b34c-b8acb61b4f3f"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[DIRECCIÓN:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="97" y="92" width="299" height="20" uuid="a139781a-d7e1-4a25-8312-1cff5f60fc5e"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{cliente_Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="97" y="112" width="299" height="20" uuid="99e3f622-639c-4a6f-bfb4-3406317e5018"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{cliente_Direccion}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="97" y="131" width="299" height="1" uuid="3aa87c6b-3a2f-4cf7-938d-4643d32d79bd"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="421" splitType="Stretch">
+			<rectangle>
+				<reportElement x="422" y="200" width="366" height="44" uuid="27fae0d8-bf6f-4132-89a1-8a864af16017"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="12" y="169" width="380" height="48" uuid="9f75de54-ca75-43a0-9a20-0938573ecb23"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="422" y="99" width="114" height="19" uuid="b82379d9-ff8d-4876-ae3e-dda20144ec97"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="729" y="60" width="59" height="20" uuid="67328422-d8ee-433b-8848-dd4846ae6536"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="595" y="80" width="134" height="19" uuid="00cfd81c-b7eb-47bd-a402-4c2d716c1712"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="729" y="80" width="59" height="19" uuid="aa95d40b-fbd0-4af8-baec-90b5615cdd47"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="536" y="99" width="59" height="19" uuid="4e82b2c3-05b6-419e-97aa-37254e19766b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="729" y="42" width="59" height="18" uuid="df5a4407-b2b9-454a-90a9-168e4e743a28"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="729" y="118" width="59" height="20" uuid="f98b78b9-b273-43d7-981a-e1c132c27d14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="536" y="22" width="59" height="20" uuid="387cd0f7-7465-45b7-a8c9-da7e92523cfa"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="536" y="158" width="59" height="20" uuid="d1c99e81-45f6-461f-912e-956b8340855f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="729" y="2" width="59" height="20" uuid="6a3bf73b-07dd-4a1c-9ad6-859e54b70382"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="595" y="60" width="134" height="20" uuid="9df14282-47f9-48ea-8617-cd25721c9499"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="595" y="22" width="134" height="20" uuid="bb635335-3d40-4f2d-8f24-6d64f8fd5e6a"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="422" y="42" width="114" height="18" uuid="d5710502-c08a-4c18-8225-7cb5d96bdd67"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="422" y="138" width="114" height="20" uuid="f2a80fc2-4c91-4ba9-b927-e2fe4fcfc14d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="536" y="42" width="59" height="18" uuid="70f6b248-2a42-435c-97a9-584a790391eb"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="729" y="99" width="59" height="19" uuid="46ae220a-44de-4e76-8e9e-bbd4b2854451"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="536" y="2" width="59" height="20" uuid="fce79f28-90e3-4325-8a73-dd2ac06d1672"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="223" y="0" width="64" height="20" uuid="6ef9e526-d1e5-4af4-a43f-26e18e0155cd"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[DNI:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="223" y="20" width="64" height="20" uuid="d25c397a-fbb7-45e3-8baf-ab25ca8d242c"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[TELÉFONO:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="297" y="79" width="102" height="1" uuid="c8055c5e-b5a9-4216-bbca-e061bb4c97da"/>
+			</line>
+			<line>
+				<reportElement x="97" y="40" width="109" height="1" uuid="4ce9a70c-1418-4507-81bf-3e56322b8bd4"/>
+			</line>
+			<line>
+				<reportElement x="97" y="19" width="109" height="1" uuid="255eb67d-4680-41a7-9015-ac8e398b70a3"/>
+			</line>
+			<staticText>
+				<reportElement x="223" y="60" width="64" height="20" uuid="9e907f91-10b0-42cc-a43e-bf378093f907"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[CODE:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="97" y="62" width="111" height="19" uuid="81c4e8c0-11ff-4569-a935-0a8b62366d03"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{soldadora_Modelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="97" y="1" width="110" height="20" uuid="bac54822-e8ed-4ef4-8328-3106637fbb06"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{cliente_RUC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="41" width="44" height="20" uuid="ccc9768f-1e8f-4c79-b013-cb0ffdb279b9"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[MARCA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="223" y="80" width="64" height="20" uuid="ea6feacc-ec8a-42de-8093-21d84f23eae1"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[N° DE SERIE:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="297" y="59" width="102" height="1" uuid="c1bc1fea-9703-420e-adbe-2177ce5e9856"/>
+			</line>
+			<line>
+				<reportElement x="297" y="38" width="102" height="1" uuid="0f632bb8-18af-4afe-98cf-262b9dffaffd"/>
+			</line>
+			<line>
+				<reportElement x="296" y="18" width="103" height="1" uuid="fff90b57-86e1-44f8-9a05-23b00cc846a9"/>
+			</line>
+			<textField>
+				<reportElement x="97" y="22" width="110" height="19" uuid="d38ca6a8-4fd3-45b8-992f-61f8254f55b0"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{cliente_Encargado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="21" width="68" height="20" uuid="8206bbd0-7b59-47c5-9fcf-a13a97491275"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[ENCARGADO:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="97" y="100" width="109" height="1" uuid="6454b6c6-a950-4d4b-982c-59681203ab47"/>
+			</line>
+			<textField>
+				<reportElement x="296" y="20" width="103" height="19" uuid="7ecfdd95-5c4c-4c92-9597-bafd40dd6dc6"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{cliente_Telefono}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="1" width="45" height="20" uuid="6613d86b-ff4b-406f-8860-48dd8c9548e1"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[RUC:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="97" y="42" width="111" height="19" uuid="88b6990a-08d3-49ee-a5e5-3d4aa425e366"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{soldadora_Marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="296" y="62" width="103" height="18" uuid="a1aa027e-dd2b-4003-b675-99f58eb6d512"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{soldadora_Code}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="81" width="85" height="20" uuid="e79bcfe0-4bc1-4527-b90e-47c0730365bd"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[HOROMETRO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="296" y="80" width="102" height="20" uuid="4137d95d-9d3e-4fb2-a197-d9133fefa68b"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{soldadora_Nro_Serie}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="97" y="82" width="111" height="19" uuid="d96ad4fe-31ee-48fa-bb06-ec788f9ac7aa"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{soldadora_Horometro}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="97" y="60" width="110" height="1" uuid="0732e983-cbb4-4ab9-9e82-fa07f319cfc0"/>
+			</line>
+			<line>
+				<reportElement x="97" y="80" width="110" height="1" uuid="1e83a827-a1ab-4e60-84b7-80085d538abd"/>
+			</line>
+			<textField>
+				<reportElement x="296" y="40" width="103" height="20" uuid="05d83084-1afd-49b7-a120-6a53bf559173"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{soldadora_Email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="223" y="40" width="64" height="20" uuid="3ed0dd9d-8e52-49fb-b269-db26ed662e79"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[E-MAIL:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="297" y="99" width="100" height="1" uuid="9df5504f-8efd-4f20-b38b-bf5f5b007443"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="61" width="55" height="20" uuid="35f916b0-1ccf-4892-a5fa-488d418d4853"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[MODELO:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="136" y="141" width="260" height="1" uuid="5e5b0504-d9aa-4666-8f51-100152d2cfc3"/>
+			</line>
+			<textField>
+				<reportElement x="24" y="169" width="368" height="48" uuid="60f21138-6f3d-46f4-b8d9-383bef2fc901"/>
+				<textFieldExpression><![CDATA[$F{encargado_Falla_reportada}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="122" width="122" height="20" uuid="ae06fd16-5301-45c4-813d-d1ad5da3407d"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[SERVICIO SOLICITADO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="102" width="111" height="20" uuid="99c187b7-0aef-456e-8577-344d3817d541"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[RECEPCIONADO POR:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="136" y="122" width="260" height="1" uuid="cccc6614-8493-4cef-b095-3a1c5a903487"/>
+			</line>
+			<textField>
+				<reportElement x="136" y="102" width="260" height="20" uuid="62c8b1b5-13b3-470a-b51d-36bec631eb4f"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{encargado_Recepcionado_por}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="122" width="260" height="20" uuid="a24c2576-52ee-4641-973d-87fee5580c4f"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{encargado_Servicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="146" width="199" height="20" uuid="82d6b3e0-1d77-4368-b68d-ae48c8d2b254"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[FALLA REPOSTADA POR EL CLIENTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="218" width="209" height="20" uuid="8dd616ba-1a1f-426e-a1f1-3400767b2d85"/>
+				<text><![CDATA[SALIDA PARA PLANCHADO Y PINTURA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="433" y="200" width="350" height="44" uuid="e4c7f4bc-2cae-4ad0-aabc-520f349f81f9"/>
+				<textFieldExpression><![CDATA[$F{soldadora_Diagnostico}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="422" y="180" width="100" height="20" uuid="6dcfb086-cfb3-4d5b-8f70-d1cf47017400"/>
+				<text><![CDATA[DIAGNOSTICO:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="408" y="0" width="1" height="421" uuid="a71d298c-a397-4894-8775-3a8d60522ff9"/>
+			</line>
+			<elementGroup/>
+			<rectangle>
+				<reportElement x="422" y="2" width="114" height="20" uuid="6ba784ff-9352-48c5-b295-da341293cc08"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="536" y="60" width="59" height="20" uuid="c487db6f-874e-4424-86c5-5a087e1d2a49"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="595" y="42" width="134" height="18" uuid="f8ead3b7-8da6-493c-88cd-7aa36e6f1d3a"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="422" y="99" width="111" height="20" uuid="02c7bd54-b142-4c31-a57a-da950e06731f"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[REGULADOR DE GAS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="541" y="102" width="44" height="20" uuid="e16cc700-68c4-463f-8ecb-fea9cc0328b6"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{elementos_regulador_gas}==true? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="422" y="22" width="114" height="20" uuid="f0c53813-a189-4821-b88f-c1a5d5eb81b7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="729" y="22" width="59" height="20" uuid="83e06d04-bb22-4cfd-8f29-8a36b98c3866"/>
+			</rectangle>
+			<textField>
+				<reportElement x="736" y="82" width="47" height="15" uuid="79db29c1-fb30-453c-9673-8d4d8e04be66"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{elementos_consumibles}==true? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="601" y="81" width="100" height="20" uuid="bf7fdc8a-68e3-4833-b7f8-5f4242d05739"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[CONSUMIBLES]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="736" y="42" width="54" height="20" uuid="b96de290-3594-4a62-a92d-0330ebcce6aa"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{elementos_base_ruedas}==true? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="736" y="123" width="47" height="14" uuid="07a566da-508b-4286-a344-346f6106b3f4"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{elementos_otros}==true? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="601" y="60" width="100" height="20" uuid="6092405d-e042-41f0-842d-008ccf2ae4cb"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[CARRETE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="601" y="21" width="100" height="20" uuid="6c12adf2-c73d-409a-af58-91c5aa9bffb3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ASAS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="736" y="62" width="47" height="20" uuid="1484843b-5f41-4129-8b24-b8f914ec2f07"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{elementos_carrete}==true? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="541" y="123" width="54" height="20" uuid="bb29d089-821e-46b3-9167-88e3ef3065d4"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{elementos_manguera_gas}==true? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="422" y="80" width="114" height="19" uuid="13463b64-eeda-4bc8-a722-d7ec0b781155"/>
+			</rectangle>
+			<textField>
+				<reportElement x="736" y="22" width="54" height="20" uuid="b99be531-0129-4643-988f-354eef76d249"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{elementos_asas}==true? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="422" y="138" width="100" height="20" uuid="a16f89de-cbc2-4f73-b523-92bafbf42315"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[PERNOS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="422" y="60" width="114" height="20" uuid="7a35205b-587b-4a0a-ba1e-fa5bfbeaa17b"/>
+			</rectangle>
+			<textField>
+				<reportElement x="541" y="62" width="55" height="20" uuid="4b7267bf-637e-4b04-a2fe-bf81baefa080"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{elementos_cable_acometida}==true? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="422" y="41" width="66" height="20" uuid="d4ee6587-4c39-4118-b2bf-e88daffffad9"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[PINZA MASA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="736" y="2" width="54" height="20" uuid="3844b474-1146-4c65-baba-dc685c1fa4f7"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{elementos_perillas}==true? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="601" y="42" width="100" height="20" uuid="22708af0-8f75-41ea-8d9b-a1b4eb14c7bf"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[BASE DE RUEDAS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="595" y="2" width="134" height="20" uuid="ba1e1059-6066-4d4b-8998-374711c3d753"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="536" y="138" width="59" height="20" uuid="e635790f-ed8a-41e5-b995-1cebdd7dec02"/>
+			</rectangle>
+			<textField>
+				<reportElement x="541" y="41" width="54" height="20" uuid="766210da-f7ca-47f5-80e8-3728277bb5a6"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{elementos_pinza_masa}==true? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="736" y="103" width="47" height="14" uuid="792e10a3-7c54-4776-a69e-32282b8038d9"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{elementos_chupon}==true? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="542" y="141" width="54" height="20" uuid="db5a3b13-7655-4c8d-850f-e220b85011f2"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{elementos_pernos}==true? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="422" y="158" width="114" height="20" uuid="a87d968a-920e-4f22-b6e5-7b90e34f8df7"/>
+			</rectangle>
+			<textField>
+				<reportElement x="542" y="161" width="54" height="20" uuid="71d86bfd-5089-437d-8257-5d899347b94a"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{elementos_ridillos}==true? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="541" y="0" width="54" height="20" uuid="752a3b10-d662-4d0e-b145-ca5aeae21e43"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{elementos_Antorcha}==true? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="601" y="2" width="90" height="20" uuid="1d5a12ef-40f4-4486-bbc1-32e388fad85c"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[PERILLAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="422" y="158" width="100" height="20" uuid="96386403-6325-4a82-8862-5ffedbac056b"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[RIDILLOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="602" y="101" width="124" height="20" uuid="492c395e-0c6d-4698-a086-b0c075b22a74"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[CHUPÓN O CONDUCTOR]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement x="541" y="21" width="54" height="20" uuid="c2b14ae3-ead7-424b-b9ff-5f7ee3a3d5a8"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{elementos_Porta_electrodo}==true? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="422" y="22" width="100" height="20" uuid="6bb1b3ff-f546-4915-8d39-01ba71d403ae"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[PORTAELECTRODO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="422" y="79" width="100" height="20" uuid="209727d0-9524-40d6-a36f-69692b14b057"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[CLAVIJA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="422" y="2" width="66" height="20" uuid="e78fcdbd-c3d9-463d-b4ff-d8ab1bc58f13"/>
+				<textElement verticalAlignment="Middle">
+					<font isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ANTORCHA]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="595" y="118" width="134" height="20" uuid="2daecb40-4591-4b4e-a118-1ad7cd0f4c45"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="601" y="120" width="100" height="20" uuid="c69698c2-bfe8-459f-992e-bd15c5506092"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[OTROS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="422" y="118" width="114" height="20" uuid="cb6169cc-7261-4106-8b87-baa1d3da9df6"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="422" y="61" width="100" height="20" uuid="d1f36982-030f-4d57-9799-b8740e3474aa"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[CABLE ACOMETIDA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="541" y="80" width="55" height="20" uuid="cadfca9f-f348-428b-88cd-a52d48ca817a"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{elementos_clavija}==true? "Si":"No"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="422" y="117" width="115" height="20" uuid="433295ea-087f-4239-9431-ab9cf453c6eb"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[MANGUERA DE GAS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="296" y="0" width="103" height="19" uuid="addaca3d-1a7f-4e78-b759-6bfee734f1d8"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{cliente_DNI}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement key="table 16" style="table 16" x="17" y="244" width="375" height="165" uuid="6388b25a-4f3b-4a54-be8d-6ec577d74153"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="planchado" uuid="b2b809e2-67e9-4023-9246-45933d3e4be9">
+						<datasetParameter name="Nro_Orden">
+							<datasetParameterExpression><![CDATA[$P{Nro_Orden}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="43" uuid="d5fc3af2-1005-466f-9601-9a50509d4971">
+						<jr:columnHeader style="table 16_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="42" height="30" uuid="64d75eff-7cba-4d3e-aadd-4cefa418ab96"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[COD. P]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 16_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="42" height="20" uuid="e742c8ba-d71b-48f6-8796-6c87a5249ff4"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{planchado_Cod_p}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="36" uuid="5d776032-8fe5-4487-88dd-3e14425071a6">
+						<jr:columnHeader style="table 16_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="36" height="30" uuid="1e4cb927-be7e-416a-a0f5-2ec74fa85d8f"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[CANT,]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 16_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="36" height="20" uuid="abe0c7ed-5e28-4b83-9347-7c9d22004318"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{planchado_Cantidad}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="295" uuid="4129c050-e636-49b7-95b1-050f0f803448">
+						<jr:columnHeader style="table 16_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="295" height="30" uuid="27042000-5ab4-4c38-9965-b8d7a6f017c4"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[DESCRIPCIÓN]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 16_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="295" height="20" uuid="4815d900-4121-4c81-809f-436ffac5c038"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{planchado_Descripcion}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table 17" style="table 17" x="422" y="257" width="366" height="152" uuid="c96fef70-f966-46d0-8569-c179559f9a3a"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="accesorios" uuid="fcf0ad59-5e92-4635-9fb2-029201992ab5">
+						<datasetParameter name="Nro_Orden">
+							<datasetParameterExpression><![CDATA[$P{Nro_Orden}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="39" uuid="e3187a86-ec3a-49bc-8f81-0f9ff44e5907">
+						<jr:columnHeader style="table 17_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="39" height="30" uuid="852dd704-89ac-4ea0-9a2c-5fe3e1049222"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[COD. P]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 17_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="39" height="20" uuid="6a0ad897-e20f-4bb4-ad98-e5e98dcae302"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{accesorios_cod_p}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="38" uuid="9a2358d7-c67e-42b1-94c4-3971015350cc">
+						<jr:columnHeader style="table 17_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="38" height="30" uuid="597544f5-b5b4-4348-ac87-c0e438618009"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[CANT,]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 17_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="38" height="20" uuid="f2d5cc97-b9c7-4b16-a67f-289b25c47cd6"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{accesorios_Cantidad}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="290" uuid="9885613f-8337-42a9-aec3-eeb10e0f0e6f">
+						<jr:columnHeader style="table 17_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="290" height="30" uuid="41d4e6ee-71f1-4679-be39-0b5f29d4d940"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[DESCRIPCIÓN]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 17_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="290" height="20" uuid="f807941e-dbbb-44dc-85c2-641fce253558"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{accesorios_Descripcion}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>
