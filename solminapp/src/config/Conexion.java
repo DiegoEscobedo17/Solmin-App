@@ -9,7 +9,7 @@ public class Conexion {
     public Conexion(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3307/solmin","root","");
+            con=DriverManager.getConnection("jdbc:mysql://192.168.1.179:3306/solmin","rootdos","root");
         } catch (Exception e) {
             System.err.println("Error:"+e);
         }        

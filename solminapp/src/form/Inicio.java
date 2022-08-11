@@ -8,6 +8,7 @@ package form;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import config.Conexion;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -24,7 +25,7 @@ public class Inicio extends javax.swing.JFrame implements ActionListener{
     ResultSet rs;
     
     
-    Formulario Formulario = new Formulario();
+    RegistroOrden RegistroOrden = new RegistroOrden();
     Historial Historial = new Historial();
     /**
      * Creates new form Inicio
@@ -32,12 +33,11 @@ public class Inicio extends javax.swing.JFrame implements ActionListener{
     public Inicio() {
         initComponents();
         setExtendedState(this.MAXIMIZED_BOTH); 
-        
-        
-        
-        
         btnRegistros.addActionListener(this);
         btnHistorial.addActionListener(this);
+        Historial.btnEliminar.setBackground(Color.RED);
+        btnSalir.setBackground(Color.RED);
+        
     }
 
     /**
@@ -68,6 +68,8 @@ public class Inicio extends javax.swing.JFrame implements ActionListener{
 
         btnHistorial.setText("VER HISTORIAL");
 
+        btnSalir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setText("SALIR");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,6 +78,11 @@ public class Inicio extends javax.swing.JFrame implements ActionListener{
         });
 
         btnRegistros.setText("HACER REGISTROS");
+        btnRegistros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,9 +102,7 @@ public class Inicio extends javax.swing.JFrame implements ActionListener{
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addGap(31, 31, 31)
                                     .addComponent(jLabel1))))))
@@ -126,6 +131,10 @@ public class Inicio extends javax.swing.JFrame implements ActionListener{
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnRegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,7 +186,7 @@ public class Inicio extends javax.swing.JFrame implements ActionListener{
         
         if(evt.equals(btnRegistros)){
             
-            Formulario.setVisible(true);
+            RegistroOrden.setVisible(true);
             this.setVisible(false);
         }else if(evt.equals(btnHistorial)){
             Historial.setVisible(true);

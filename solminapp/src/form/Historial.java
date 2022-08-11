@@ -6,10 +6,22 @@
 package form;
 
 import config.Conexion;
+import java.awt.Color;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -17,12 +29,13 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Historial extends javax.swing.JFrame{
     
-    Conexion cn = new Conexion();
-    Connection con;
-    DefaultTableModel model;
-    Statement st;
-    ResultSet rs;
-
+    public static Conexion cn = new Conexion();
+    public static Connection con;
+    public static DefaultTableModel model;
+    public static DefaultTableModel model2;
+    public static Statement st;
+    public static ResultSet rs;
+    public static int Nro_Orden = 0;
 
     /**
      * Creates new form Historial
@@ -31,6 +44,7 @@ public class Historial extends javax.swing.JFrame{
         initComponents();
         setExtendedState(this.MAXIMIZED_BOTH); 
         listar();
+        TablaDatos.setModel(model);
     }
 
     /**
@@ -47,10 +61,14 @@ public class Historial extends javax.swing.JFrame{
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaDatos = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        btnBuscar = new javax.swing.JButton();
+        txtBuscar = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        ComboBusca = new javax.swing.JComboBox<>();
+        btnCartilla = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnVer = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,15 +86,20 @@ public class Historial extends javax.swing.JFrame{
 
             },
             new String [] {
-                "NRO. ORDEN", "CLIENTE", "MARCA", "SERIE", "VER REGISTRO"
+                "NRO. ORDEN", "CLIENTE", "MARCA", "SERIE"
             }
         ));
         jScrollPane1.setViewportView(TablaDatos);
 
-        jButton1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jButton1.setText("BUSCAR");
+        btnBuscar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        btnBuscar.setText("BUSCAR");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        txtBuscar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Volver.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -85,58 +108,119 @@ public class Historial extends javax.swing.JFrame{
             }
         });
 
-        jComboBox1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NRO. ORDEN", "NOMBRE", "MARCA SOLDADORA", "NRO. DE SERIE" }));
+        ComboBusca.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        ComboBusca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NRO. ORDEN", "NOMBRE", "MARCA SOLDADORA", "NRO. DE SERIE" }));
+        ComboBusca.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ComboBuscaItemStateChanged(evt);
+            }
+        });
+
+        btnCartilla.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnCartilla.setText("VER REPORTE");
+        btnCartilla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCartillaActionPerformed(evt);
+            }
+        });
+
+        btnEliminar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.setBackground(Color.RED);
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
+        btnVer.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        btnVer.setText("VER");
+        btnVer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerActionPerformed(evt);
+            }
+        });
+
+        btnEditar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnEditar.setText("EDITAR");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(399, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(163, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(239, 239, 239)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 635, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCartilla, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(342, 342, 342))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(94, 94, 94)
-                                .addComponent(jLabel1)
-                                .addGap(37, 37, 37))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel2)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 635, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(239, 239, 239)
-                .addComponent(jButton2)
-                .addContainerGap())
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnVer))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(248, 248, 248)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(145, 145, 145)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel1)
+                                                .addGap(37, 37, 37)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(ComboBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(9, 9, 9)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2))
-                .addContainerGap(438, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(ComboBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBuscar)
+                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(btnVer))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnCartilla, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
 
         pack();
@@ -147,17 +231,301 @@ public class Historial extends javax.swing.JFrame{
         Inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        Limpiar();
+        Buscar();
+        txtBuscar.setText("");
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void ComboBuscaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ComboBuscaItemStateChanged
+  
+    }//GEN-LAST:event_ComboBuscaItemStateChanged
+
+    private void btnCartillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartillaActionPerformed
+        int row = TablaDatos.getSelectedRow();
+        if (row == -1) {
+            JOptionPane.showMessageDialog(null, "No se Selecciono");
+        } else {
+        Nro_Orden = Integer.parseInt((String) TablaDatos.getValueAt(row, 0).toString());
+        try {
+            con = cn.getConnection();
+            JasperReport jr = JasperCompileManager.compileReport("src/reportes/cartillafinal.jrxml");
+            Map mp = new HashMap();
+            mp.put("Nro_Orden", Nro_Orden);
+            JasperPrint jp = JasperFillManager.fillReport(jr, mp, con);
+            JasperViewer jv = new JasperViewer(jp, false);
+            jv.setTitle("Reporte Orden");
+            jv.setVisible(true);
+            jv.setExtendedState(MAXIMIZED_BOTH);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se pudo generar Reporte"+e);
+        }
+        }
+    }//GEN-LAST:event_btnCartillaActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        JOptionPane.showMessageDialog(null, "Realmente desea Eliminar ?");
+        btnEliminar.setBackground(Color.RED);
+        int row = TablaDatos.getSelectedRow();
+        if (row == -1) {
+            JOptionPane.showMessageDialog(null, "No se Selecciono");
+        } else {
+        Nro_Orden = Integer.parseInt((String) TablaDatos.getValueAt(row, 0).toString());
+        String sql = "DELETE FROM `cliente` WHERE Nro_Orden=" + Nro_Orden;
+        String sql2 = "DELETE FROM `accesorios` WHERE Nro_Orden=" + Nro_Orden; 
+        String sql3 = "DELETE FROM `soldadora` WHERE Nro_Orden=" + Nro_Orden; 
+        String sql4 = "DELETE FROM `planchado` WHERE Nro_Orden=" + Nro_Orden; 
+        String sql5 = "DELETE FROM `encargado` WHERE Nro_Orden=" + Nro_Orden; 
+        String sql6 = "DELETE FROM `elementos` WHERE Nro_Orden=" + Nro_Orden; 
+        String sql7 = "delete from orden where Nro_Orden=" + Nro_Orden;
+                    try {
+                    con = cn.getConnection();
+                    st = con.createStatement();
+                    st.executeUpdate(sql);
+                    st.executeUpdate(sql2);
+                    st.executeUpdate(sql3);
+                    st.executeUpdate(sql4);
+                    st.executeUpdate(sql5);
+                    st.executeUpdate(sql6);
+                    st.executeUpdate(sql7);
+                    JOptionPane.showMessageDialog(null, "Usuario Eliminado");
+                    Limpiar();
+                    listar();
+                    
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "No se pudo Eliminar"+e);
+                }
+        }
+        
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerActionPerformed
+        Limpiar();
+        listar();
+    }//GEN-LAST:event_btnVerActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        
+        int row = TablaDatos.getSelectedRow();
+         if (row == -1) {
+            JOptionPane.showMessageDialog(null, "No se Selecciono");
+        } else {
+        FormEditar FormEditar=new FormEditar();
+        FormEditar.setVisible(true);
+        this.setVisible(false);
+        Nro_Orden = Integer.parseInt((String) TablaDatos.getValueAt(row, 0).toString());
+        FormEditar.txtNroOrden.setText(String.valueOf(Nro_Orden));
+        
+        String sql = "SELECT cliente.`Nombre` AS cliente_Nombre, cliente.`Direccion` AS cliente_Direccion, cliente.`RUC` AS cliente_RUC, cliente.`DNI` AS cliente_DNI, cliente.`Encargado` AS cliente_Encargado, cliente.`Telefono` AS cliente_Telefono, encargado.`Recepcionado_por` AS encargado_Recepcionado_por, encargado.`Falla_reportada` AS encargado_Falla_reportada, soldadora.`Marca` AS soldadora_Marca, soldadora.`Modelo` AS soldadora_Modelo, soldadora.`Nro_Serie` AS soldadora_Nro_Serie, soldadora.`Code` AS soldadora_Code, soldadora.`Email` AS soldadora_Email, soldadora.`Horometro` AS soldadora_Horometro, soldadora.`Diagnostico` AS soldadora_Diagnostico, orden.`Nro_Orden` AS orden_Nro_Orden FROM `orden` orden INNER JOIN `cliente` cliente ON orden.`Nro_Orden` = cliente.`Nro_Orden` INNER JOIN `encargado` encargado ON orden.`Nro_Orden` = encargado.`Nro_Orden` INNER JOIN `soldadora` soldadora ON orden.`Nro_Orden` = soldadora.`Nro_Orden` Where orden.Nro_Orden like "+ Nro_Orden +"";
+         try {
+
+        con = cn.getConnection();
+        st = con.createStatement();
+        rs = st.executeQuery(sql);
+        
+        while (rs.next ( ))
+        {
+           String Nombre = rs.getString ("cliente_Nombre");
+           FormEditar.txtNombre.setText(Nombre);
+           String Direccion = rs.getString("cliente_Direccion");
+           FormEditar.txtDireccion.setText(Direccion);
+           String RUC = rs.getString("cliente_RUC");
+           FormEditar.txtRUC.setText(RUC);
+           String DNI = rs.getString("cliente_DNI");
+           FormEditar.txtDNI.setText(DNI);
+           String Encargado = rs.getString("cliente_Encargado");
+           FormEditar.txtEncargado.setText(Encargado);
+           String Telefono = rs.getString("cliente_Telefono");
+           FormEditar.txtTelefono.setText(Telefono);
+           String Receptor = rs.getString("encargado_Recepcionado_por");
+           FormEditar.txtReceptor.setText(Receptor);
+           String Falla = rs.getString("encargado_Falla_reportada");
+           FormEditar.txtFallaReportada.setText(Falla);
+           String Marca = rs.getString("soldadora_Marca");
+           FormEditar.txtMarca.setText(Marca);
+           String Modelo = rs.getString("soldadora_Modelo");
+           FormEditar.txtModelo.setText(Modelo);
+           String NroSerie = rs.getString("soldadora_Nro_Serie");
+           FormEditar.txt_NroSerie.setText(NroSerie);
+           String Code = rs.getString("soldadora_Code");
+           FormEditar.txtCode.setText(Code);
+           String Email = rs.getString("soldadora_Email");
+           FormEditar.txtEmail.setText(Email);
+           String Horometro = rs.getString("soldadora_Horometro");
+           FormEditar.txtHorometro.setText(Horometro);
+           String Diagnostico = rs.getString("soldadora_Diagnostico");
+           FormEditar.txtDiagnostico.setText(Diagnostico);
+           
+        }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
+        listar1();
+        listar2();
+        String sql4 = "SELECT orden.`fecha_ingreso` AS orden_fecha_ingreso, orden.`fecha_salida` AS orden_fecha_salida, orden.`Nro_Orden` AS orden_Nro_Orden FROM `orden` orden Where orden.Nro_Orden like "+ Nro_Orden +"";
+        try {
+
+        con = cn.getConnection();
+        st = con.createStatement();
+        rs = st.executeQuery(sql4);
+        
+        while (rs.next ( ))
+        {
+           Date Fecha_Ingreso = rs.getDate("orden_fecha_ingreso");
+           FormEditar.txtFechaIngreso.setDate(Fecha_Ingreso);
+           Date Fecha_Salida = rs.getDate("orden_fecha_salida");
+           FormEditar.txtFechaSalida.setDate(Fecha_Salida);
+           
+        }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
+        
+        String sql5="SELECT elementos.`Antorcha` AS elementos_Antorcha, elementos.`Porta_electrodo` AS elementos_Porta_electrodo, elementos.`pinza_masa` AS elementos_pinza_masa, elementos.`cable_acometida` AS elementos_cable_acometida, elementos.`clavija` AS elementos_clavija, elementos.`regulador_gas` AS elementos_regulador_gas, elementos.`manguera_gas` AS elementos_manguera_gas, elementos.`pernos` AS elementos_pernos, elementos.`ridillos` AS elementos_ridillos, elementos.`perillas` AS elementos_perillas, elementos.`asas` AS elementos_asas, elementos.`base_ruedas` AS elementos_base_ruedas, elementos.`carrete` AS elementos_carrete, elementos.`consumibles` AS elementos_consumibles, elementos.`chupon` AS elementos_chupon, elementos.`otros` AS elementos_otros FROM `orden` orden INNER JOIN `elementos` elementos ON orden.`Nro_Orden` = elementos.`Nro_Orden` WHERE orden.Nro_Orden = "+ Nro_Orden +"";
+//        
+        try {
+
+        con = cn.getConnection();
+        st = con.createStatement();
+        rs = st.executeQuery(sql5);
+        
+        while (rs.next ( ))
+        {
+           Boolean Antorcha = rs.getBoolean("elementos_Antorcha");
+           if (Antorcha == true){
+               FormEditar.RadioAntorchaSi.setSelected(true);
+           }
+           if (Antorcha == false){
+               FormEditar.RadioAntorchaNo.setSelected(true);
+           }
+           Boolean Porta = rs.getBoolean("elementos_Porta_electrodo");
+           if (Porta == true){
+               FormEditar.RadioPortaSi.setSelected(true);
+           }
+           if (Porta == false){
+               FormEditar.RadioPortaNo.setSelected(true);
+           }
+           Boolean Pinza = rs.getBoolean("elementos_pinza_masa");
+           if (Pinza == true){
+               FormEditar.RadioPinzaSi.setSelected(true);
+           }
+           if (Pinza == false){
+               FormEditar.RadioPinzaNo.setSelected(true);
+           }
+           Boolean Cable = rs.getBoolean("elementos_cable_acometida");
+           if (Cable == true){
+               FormEditar.RadioCableSi.setSelected(true);
+           }
+           if (Cable == false){
+               FormEditar.RadioCableNo.setSelected(true);
+           }
+           Boolean Clavija = rs.getBoolean("elementos_clavija");
+           if (Clavija == true){
+               FormEditar.RadioClavijaSi.setSelected(true);
+           }
+           if (Clavija == false){
+               FormEditar.RadioClavijaNo.setSelected(true);
+           }
+           Boolean Regulador_Gas = rs.getBoolean("elementos_regulador_gas");
+           if (Regulador_Gas == true){
+               FormEditar.RadioReguladorSi.setSelected(true);
+           }
+           if (Regulador_Gas == false){
+               FormEditar.RadioReguladorNo.setSelected(true);
+           }
+           Boolean Manguera_Gas = rs.getBoolean("elementos_manguera_gas");
+           if (Manguera_Gas == true){
+               FormEditar.RadioMangueraSi.setSelected(true);
+           }
+           if (Manguera_Gas == false){
+               FormEditar.RadioMangueraNo.setSelected(true);
+           }
+           Boolean Pernos = rs.getBoolean("elementos_pernos");
+           if (Pernos == true){
+               FormEditar.RadioPernosSi.setSelected(true);
+           }
+           if (Pernos == false){
+               FormEditar.RadioPernosNo.setSelected(true);
+           }
+           Boolean Ridillos = rs.getBoolean("elementos_ridillos");
+           if (Ridillos == true){
+               FormEditar.RadioRidillosSi.setSelected(true);
+           }
+           if (Ridillos == false){
+               FormEditar.RadioRidillosNo.setSelected(true);
+           }
+           Boolean Perillas = rs.getBoolean("elementos_perillas");
+           if (Perillas == true){
+               FormEditar.RadioPerillasSi.setSelected(true);
+           }
+           if (Perillas == false){
+               FormEditar.RadioPerillasNo.setSelected(true);
+           }
+           Boolean Asas = rs.getBoolean("elementos_asas");
+           if (Asas == true){
+               FormEditar.RadioAsasSi.setSelected(true);
+           }
+           if (Asas == false){
+               FormEditar.RadioAsasNo.setSelected(true);
+           }
+           Boolean Base_Ruedas = rs.getBoolean("elementos_base_ruedas");
+           if (Base_Ruedas == true){
+               FormEditar.RadioRuedasSi.setSelected(true);
+           }
+           if (Base_Ruedas == false){
+               FormEditar.RadioRuedasNo.setSelected(true);
+           }
+           Boolean Carrete = rs.getBoolean("elementos_carrete");
+           if (Carrete == true){
+               FormEditar.RadioCarreteSi.setSelected(true);
+           }
+           if (Carrete == false){
+               FormEditar.RadioCarreteNo.setSelected(true);
+           }
+           Boolean Consumibles = rs.getBoolean("elementos_consumibles");
+           if (Consumibles == true){
+               FormEditar.RadioConsumiblesSi.setSelected(true);
+           }
+           if (Consumibles == false){
+               FormEditar.RadioConsumiblesNo.setSelected(true);
+           }
+           Boolean Chupon = rs.getBoolean("elementos_chupon");
+           if (Chupon == true){
+               FormEditar.RadioChuponSi.setSelected(true);
+           }
+           if (Chupon == false){
+               FormEditar.RadioChuponNo.setSelected(true);
+           }
+           Boolean Otros = rs.getBoolean("elementos_otros");
+           if (Otros == true){
+               FormEditar.RadioOtrosSi.setSelected(true);
+           }
+           if (Otros == false){
+               FormEditar.RadioOtrosNo.setSelected(true);
+           }
+        }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
+        }
+    }//GEN-LAST:event_btnEditarActionPerformed
     
-    void listar() {
-        String sql = "SELECT orden.`Nro_Orden` AS orden_Nro_Orden, cliente.`Nombre` AS cliente_Nombre, soldadora.`Marca` AS soldadora_Marca, soldadora.`Nro_Serie` AS soldadora_Nro_Serie FROM `orden` orden INNER JOIN `cliente` cliente ON orden.`Nro_Orden` = cliente.`Nro_Orden` INNER JOIN `soldadora` soldadora ON orden.`Nro_Orden` = soldadora.`orden_Nro_Orden`";
+    public void listar() {
+        String sql = "SELECT orden.`Nro_Orden` AS orden_Nro_Orden, cliente.`Nombre` AS cliente_Nombre, soldadora.`Marca` AS soldadora_Marca, soldadora.`Nro_Serie` AS soldadora_Nro_Serie FROM `orden` orden INNER JOIN `cliente` cliente ON orden.`Nro_Orden` = cliente.`Nro_Orden` INNER JOIN `soldadora` soldadora ON orden.`Nro_Orden` = soldadora.`Nro_Orden`";
         try {
             con = cn.getConnection();
             st = con.createStatement();
             rs = st.executeQuery(sql);
+            
             Object[] persona = new Object[4];
 //            String[] Titulos={"ID","DNI","NOMBRES"};         
 //            model=new DefaultTableModel(null,Titulos);   
             model = (DefaultTableModel) TablaDatos.getModel();
+            
             while (rs.next()) {
                 persona[0] = rs.getInt("orden_Nro_Orden");
                 persona[1] = rs.getString("cliente_Nombre");
@@ -168,20 +536,232 @@ public class Historial extends javax.swing.JFrame{
             TablaDatos.setModel(model);
 
         } catch (Exception e) {
+            
         }
 
     }
+    /*
+    NRO. ORDEN
+    NOMBRE
+    MARCA SOLDADORA
+    NRO. DE SERIE
+    */
+    void Buscar(){
+        String Eleccion = (String) ComboBusca.getSelectedItem();
+        if (Eleccion.equals("NRO. ORDEN")){
+            String Nro_Orden = txtBuscar.getText();
+            String sql = "SELECT orden.`Nro_Orden` AS orden_Nro_Orden, cliente.`Nombre` AS cliente_Nombre, soldadora.`Marca` AS soldadora_Marca, soldadora.`Nro_Serie` AS soldadora_Nro_Serie FROM `orden` orden INNER JOIN `cliente` cliente ON orden.`Nro_Orden` = cliente.`Nro_Orden` INNER JOIN `soldadora` soldadora ON orden.`Nro_Orden` = soldadora.`Nro_Orden` WHERE orden.`Nro_Orden`LIKE "+ Nro_Orden +" ";
+                
+            try {
+                con = cn.getConnection();
+                st = con.createStatement();
+                rs = st.executeQuery(sql);
+                Object[] persona = new Object[4];
+    //            String[] Titulos={"ID","DNI","NOMBRES"};         
+    //            model=new DefaultTableModel(null,Titulos);   
+                model = (DefaultTableModel) TablaDatos.getModel();
+                while (rs.next()) {
+                    persona[0] = rs.getInt("orden_Nro_Orden");
+                    persona[1] = rs.getString("cliente_Nombre");
+                    persona[2] = rs.getString("soldadora_Marca");
+                    persona[3] = rs.getString("soldadora_Nro_Serie");
+                    model.addRow(persona);
+                }
+                TablaDatos.setModel(model);
+
+            } catch (Exception e) {
+                System.out.print(e);
+            }
+                
+        }
+        if (Eleccion.equals("NOMBRE")){
+            String Nombre = txtBuscar.getText();
+            String sql = "SELECT orden.`Nro_Orden` AS orden_Nro_Orden, cliente.`Nombre` AS cliente_Nombre, soldadora.`Marca` AS soldadora_Marca, soldadora.`Nro_Serie` AS soldadora_Nro_Serie FROM `orden` orden INNER JOIN `cliente` cliente ON orden.`Nro_Orden` = cliente.`Nro_Orden` INNER JOIN `soldadora` soldadora ON orden.`Nro_Orden` = soldadora.`Nro_Orden` WHERE cliente.`Nombre` LIKE '" + Nombre + "' ";
+                try {
+                con = cn.getConnection();
+                st = con.createStatement();
+                rs = st.executeQuery(sql);
+                Object[] persona = new Object[4];
+    //            String[] Titulos={"ID","DNI","NOMBRES"};         
+    //            model=new DefaultTableModel(null,Titulos);   
+                model = (DefaultTableModel) TablaDatos.getModel();
+                while (rs.next()) {
+                    persona[0] = rs.getInt("orden_Nro_Orden");
+                    persona[1] = rs.getString("cliente_Nombre");
+                    persona[2] = rs.getString("soldadora_Marca");
+                    persona[3] = rs.getString("soldadora_Nro_Serie");
+                    model.addRow(persona);
+                }
+                TablaDatos.setModel(model);
+
+            } catch (Exception e) {
+                System.out.print(e);
+            }
+
+        }
+        if (Eleccion.equals("MARCA SOLDADORA")){
+            String Marca = txtBuscar.getText();
+            String sql = "SELECT orden.`Nro_Orden` AS orden_Nro_Orden, cliente.`Nombre` AS cliente_Nombre, soldadora.`Marca` AS soldadora_Marca, soldadora.`Nro_Serie` AS soldadora_Nro_Serie FROM `orden` orden INNER JOIN `cliente` cliente ON orden.`Nro_Orden` = cliente.`Nro_Orden` INNER JOIN `soldadora` soldadora ON orden.`Nro_Orden` = soldadora.`Nro_Orden` WHERE soldadora.`Marca` LIKE '" + Marca + "' ";
+                try {
+                con = cn.getConnection();
+                st = con.createStatement();
+                rs = st.executeQuery(sql);
+                Object[] persona = new Object[4];
+    //            String[] Titulos={"ID","DNI","NOMBRES"};         
+    //            model=new DefaultTableModel(null,Titulos);   
+                model = (DefaultTableModel) TablaDatos.getModel();
+                while (rs.next()) {
+                    persona[0] = rs.getInt("orden_Nro_Orden");
+                    persona[1] = rs.getString("cliente_Nombre");
+                    persona[2] = rs.getString("soldadora_Marca");
+                    persona[3] = rs.getString("soldadora_Nro_Serie");
+                    model.addRow(persona);
+                }
+                TablaDatos.setModel(model);
+
+            } catch (Exception e) {
+                System.out.print(e);
+            }
+        }
+        
+        if (Eleccion.equals("NRO. DE SERIE")){
+            String NroSerie = txtBuscar.getText();
+            String sql = "SELECT orden.`Nro_Orden` AS orden_Nro_Orden, cliente.`Nombre` AS cliente_Nombre, soldadora.`Marca` AS soldadora_Marca, soldadora.`Nro_Serie` AS soldadora_Nro_Serie FROM `orden` orden INNER JOIN `cliente` cliente ON orden.`Nro_Orden` = cliente.`Nro_Orden` INNER JOIN `soldadora` soldadora ON orden.`Nro_Orden` = soldadora.`Nro_Orden` WHERE soldadora.`Nro_Serie` LIKE '" + NroSerie + "' ";
+                try {
+                con = cn.getConnection();
+                st = con.createStatement();
+                rs = st.executeQuery(sql);
+                Object[] persona = new Object[4];
+    //            String[] Titulos={"ID","DNI","NOMBRES"};         
+    //            model=new DefaultTableModel(null,Titulos);   
+                model = (DefaultTableModel) TablaDatos.getModel();
+                while (rs.next()) {
+                    persona[0] = rs.getInt("orden_Nro_Orden");
+                    persona[1] = rs.getString("cliente_Nombre");
+                    persona[2] = rs.getString("soldadora_Marca");
+                    persona[3] = rs.getString("soldadora_Nro_Serie");
+                    model.addRow(persona);
+                }
+                TablaDatos.setModel(model);
+
+            } catch (Exception e) {
+                System.out.print(e);
+            }
+        }
+        
+    }
+    void limpiarTabla(DefaultTableModel model) {
+        for (int i = 0; i <= TablaDatos.getRowCount(); i++) {
+            model.removeRow(i);
+            i = i - 1;
+        }
+
+    }
+    void Actualizar(){
+        limpiarTabla(model);
+        Buscar();
+    }
+    
+    void Limpiar(){
+        model.getDataVector().removeAllElements();
+        TablaDatos.updateUI();
+    }
+    void Eliminar() {
+        
+        String sql = "delete from persona where Id=" + Nro_Orden;        
+        int fila = TablaDatos.getSelectedRow();
+        if (fila < 0) {
+            JOptionPane.showMessageDialog(null,"Usuario no Seleccionado");
+        } else {
+                try {
+                    con = cn.getConnection();
+                    st = con.createStatement();
+                    st.executeUpdate(sql);
+                    JOptionPane.showMessageDialog(null, "Usuario Eliminado");
+                    limpiarTabla(model);
+                    
+                } catch (Exception e) {
+                }
+               
+        }
+
+    }
+    public static void listar1(){
+        String sql2 = "SELECT * FROM `planchado` WHERE Nro_Orden LIKE "+ Nro_Orden +"";
+        try {
+            con = cn.getConnection();
+            st = con.createStatement();
+            rs = st.executeQuery(sql2);
+            Object[] persona = new Object[4];
+//            String[] Titulos={"ID","DNI","NOMBRES"};         
+//            model=new DefaultTableModel(null,Titulos);   
+            model = (DefaultTableModel) FormEditar.TablePlanchado.getModel();
+            while (rs.next()) {
+                persona[0] = rs.getString("Cod_p");
+                persona[1] = rs.getString("Cantidad");
+                persona[2] = rs.getString("Descripcion");
+                persona[3] = rs.getInt("Nro_Orden");
+                model.addRow(persona);
+            }
+            FormEditar.TablePlanchado.setModel(model);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
+    public static void listar2(){
+         String sql3 = "SELECT * FROM `accesorios` WHERE Nro_Orden LIKE "+ Nro_Orden +"";
+        try {
+            con = cn.getConnection();
+            st = con.createStatement();
+            rs = st.executeQuery(sql3);
+            Object[] persona = new Object[4];
+//            String[] Titulos={"ID","DNI","NOMBRES"};         
+//            model=new DefaultTableModel(null,Titulos);   
+            model2 = (DefaultTableModel) FormEditar.TableDiagnostico.getModel();
+            while (rs.next()) {
+                persona[0] = rs.getString("Cod_p");
+                persona[1] = rs.getString("Cantidad");
+                persona[2] = rs.getString("Descripcion");
+                persona[3] = rs.getInt("Nro_Orden");
+                model2.addRow(persona);
+            }
+            FormEditar.TableDiagnostico.setModel(model2);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
+    public static void limpiarTabla1(DefaultTableModel model) {
+        for (int i = 0; i <= FormEditar.TablePlanchado.getRowCount(); i++) {
+            model.removeRow(i);
+            i = i - 1;
+        }
+
+    }
+    public static void limpiarTabla2(DefaultTableModel model2) {
+        for (int i = 0; i <= FormEditar.TableDiagnostico.getRowCount(); i++) {
+            model2.removeRow(i);
+            i = i - 1;
+        }
+
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TablaDatos;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> ComboBusca;
+    public javax.swing.JTable TablaDatos;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnCartilla;
+    private javax.swing.JButton btnEditar;
+    public static javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnVer;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 
 }

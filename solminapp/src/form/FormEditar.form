@@ -1,0 +1,1846 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="botonesridillos">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="botonesreguladorgas">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="botonesbaseruedas">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="botonespinzamasa">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="botonesasas">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="botonesportaelectrodo">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="botonesclavija">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="botonesmangueragas">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="botonesperillas">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="botonesantorcha">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="botonescableacometida">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="botonespernos">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="botonescarrete">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="botonesconsumibles">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="botoneschupon">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="botonesotros">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="BOTONESFOTO">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="BOTONESSERVICIO">
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="Panel1" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="Panel2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" pref="177" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="LabelNro" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtNroOrden" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                          <Component id="LabelOrden" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="LabelFechaIngreso" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="LabelFechaSalida" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtFechaSalida" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
+                          <Component id="txtFechaIngreso" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                      <Component id="btnVolver" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                      <Component id="btnVolver" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel46" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="LabelFechaIngreso" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtFechaIngreso" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtFechaSalida" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LabelFechaSalida" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="LabelOrden" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtNroOrden" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LabelNro" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="Panel2" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="Panel1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="16" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="LabelNro">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xb0;"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JPanel" name="Panel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="LabelEncargado" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="txtRUC" alignment="0" pref="180" max="32767" attributes="0"/>
+                                              <Component id="txtEncargado" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="LabelMarca" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="LabelModelo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="LabelHorometro" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtHorometro" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                                              <Component id="txtModelo" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                                              <Component id="txtMarca" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="LabelDNI" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="LabelTelefono" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="LabelEmail" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="LabelCode" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtTelefono" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtEmail" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="txtCode" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtDNI" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="LabelNroSerie" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="txt_NroSerie" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="LabelFalla" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="LabelServicio" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="CheckBoxGarantia" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                          <Component id="CheckBoxReparacion" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                          <Component id="CheckBoxMantenimento" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                          <Component id="CheckBoxReclamo" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="txtServicio" min="-2" pref="2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="LabelReceptor" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="txtReceptor" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Component id="LabelRUC" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="LabelPlanchado" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="LabelCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelDireccion" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtDireccion" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                          <Component id="btnIngreso" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="labelIngreso" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                                          <Component id="btnReparacion" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="labelReparacion" min="-2" pref="66" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="LabelFotoIngreso" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+                                          <Component id="LabelFotoReparacion" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="btnSalida" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="labelSalida" min="-2" pref="44" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="LabelFotoSalida" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="txtCodPlanchado" min="-2" pref="61" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="txtCantPlanchado" min="-2" pref="61" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="txtDescPlanchado" min="-2" pref="140" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="btnEditarPlanchado" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnAgregarPlanchado" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+                          <Component id="labelfoto" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="RadioFotoSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="RadioFotoNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelRUC" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelDNI" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtRUC" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDNI" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelEncargado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtEncargado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelMarca" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtMarca" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelModelo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtModelo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelCode" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCode" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelHorometro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtHorometro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelNroSerie" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_NroSerie" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelReceptor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtReceptor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelServicio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CheckBoxGarantia" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CheckBoxReparacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CheckBoxMantenimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CheckBoxReclamo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtServicio" alignment="3" min="-2" pref="0" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="LabelFalla" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="59" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="labelfoto" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="RadioFotoSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="RadioFotoNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="LabelFotoIngreso" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="LabelFotoReparacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btnReparacion" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelReparacion" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="btnIngreso" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelIngreso" min="-2" pref="22" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="LabelFotoSalida" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="labelSalida" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="btnSalida" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Component id="LabelPlanchado" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel1" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCantPlanchado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDescPlanchado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAgregarPlanchado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCodPlanchado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnEditarPlanchado" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" min="-2" pref="65" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JTextField" name="txtEncargado">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelTelefono">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="TELEFONO:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtTelefono">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtRUC">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelMarca">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="MARCA:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtMarca">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelEmail">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="E-MAIL:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelModelo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="MODELO:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtModelo">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelCode">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CODE:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelHorometro">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="HOROMETRO:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtHorometro">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelNroSerie">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="N&#xb0; SERIE:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelReceptor">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="RECEPCIONADO POR:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtReceptor">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelServicio">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="SERVICIO SOLICITADO:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="CheckBoxGarantia">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="BOTONESSERVICIO"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="GARANT&#xcd;A"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="CheckBoxReparacion">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="BOTONESSERVICIO"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="REPARACI&#xd3;N"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="CheckBoxMantenimento">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="BOTONESSERVICIO"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="MANTENIMIENTO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="CheckBoxReclamo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="BOTONESSERVICIO"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="RECLAMO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelFalla">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="FALLA REPORTADA POR EL CLIENTE:"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="txtFallaReportada">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="LabelFotoIngreso">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="FOTO INGRESO:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelFotoReparacion">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="FOTO REPARACION:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelFotoSalida">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="FOTO SALIDA:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnIngreso">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="SUBIR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnReparacion">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="SUBIR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReparacionActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnSalida">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="SUBIR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalidaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelCliente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CLIENTE:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtNombre">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelDireccion">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="DIRECCI&#xd3;N:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtDireccion">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDireccionActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelRUC">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="RUC:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelDNI">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="DNI:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelPlanchado">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="SALIDA PARA PLANCHADO Y PINTURA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelEncargado">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ENCARGADO:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCode">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtEmail">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="TablePlanchado">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="3" rowCount="0">
+                    <Column editable="true" title="COD. P" type="java.lang.Object"/>
+                    <Column editable="true" title="CANT." type="java.lang.Object"/>
+                    <Column editable="true" title="DESCRIPCION" type="java.lang.Object"/>
+                  </Table>
+                </Property>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TablePlanchadoMouseClicked"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JTextField" name="txtDNI">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txt_NroSerie">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelReparacion">
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelSalida">
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelIngreso">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtServicio">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" value="jTextField1"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="COD.P"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CANT."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCantPlanchado">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCantPlanchadoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="DESCRIPCI&#xd3;N"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtDescPlanchado">
+        </Component>
+        <Component class="javax.swing.JButton" name="btnAgregarPlanchado">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="AGREGAR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarPlanchadoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCodPlanchado">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodPlanchadoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelfoto">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="DESEA SUBIR FOTOS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioFotoSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="BOTONESFOTO"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioFotoNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="BOTONESFOTO"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnEditarPlanchado">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="EDITAR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarPlanchadoActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel46">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="36" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="ORDEN DE SERVICIO"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnVolver">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/images/Volver.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVolverActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="EDITAR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JPanel" name="Panel2">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="txtPernos" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtMangueraGas" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txtReguladorGas" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txtClavija" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txtCableAcometida" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txtPinzaMasa" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txtPortaElectrodo" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtAntorcha" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txtRidillos" alignment="1" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="LabelAntorcha" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="LabelElementos1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+                                  <Component id="LabelElementos2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtChupon" alignment="0" min="-2" pref="0" max="-2" attributes="0"/>
+                                              <Component id="txtOtros" alignment="0" min="-2" pref="0" max="-2" attributes="0"/>
+                                              <Component id="txtConsumibles" alignment="0" min="-2" pref="0" max="-2" attributes="0"/>
+                                              <Component id="txtCarrete" alignment="0" min="-2" pref="0" max="-2" attributes="0"/>
+                                              <Component id="txtBasedeRuedas" alignment="0" min="-2" pref="0" max="-2" attributes="0"/>
+                                              <Component id="txtAsas" alignment="0" min="-2" pref="0" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                                          <Component id="txtPerillas" min="-2" pref="0" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="LabelCarrete" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="RadioCarreteSi" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="LabelConsumibles" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="RadioConsumiblesSi" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="LabelChupon" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="RadioChuponSi" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="LabelAsas" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="LabelBaseRuedas" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="LabelOtros" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="LabelPerillas" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="RadioRuedasSi" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="RadioAsasSi" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="RadioPerillasSi" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="RadioOtrosSi" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="RadioPerillasNo" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="RadioChuponNo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="RadioConsumiblesNo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="RadioCarreteNo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="RadioRuedasNo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="RadioAsasNo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="RadioOtrosNo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="LabelPinza" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="RadioPinzaSi" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="RadioPinzaNo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="LabelCableAcometica" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="RadioCableSi" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="RadioCableNo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="LabelClavija" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="RadioClavijaSi" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="RadioClavijaNo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="LabelReguladorGas" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="17" max="32767" attributes="0"/>
+                                  <Component id="RadioReguladorSi" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="RadioReguladorNo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="LabelManguera" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="RadioMangueraSi" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="RadioMangueraNo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="LabelRidillos" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="RadioRidillosSi" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="RadioRidillosNo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="LabelPernos" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="RadioPernosSi" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="RadioPernosNo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="LabelPortaElectrodo" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="RadioAntorchaSi" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="RadioAntorchaNo" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="RadioPortaSi" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="RadioPortaNo" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="LabelDiagnostico" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jScrollPane4" max="32767" attributes="0"/>
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtCodAccesorios" min="-2" pref="61" max="-2" attributes="0"/>
+                                      <EmptySpace pref="18" max="32767" attributes="0"/>
+                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtCantAccesorios" min="-2" pref="61" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtDescAccesorios" min="-2" pref="140" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="btnEditarAccesorios" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnAgregarAccesorios" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelElementos1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelElementos2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="RadioAntorchaSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RadioAntorchaNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="LabelAntorcha" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LabelPerillas" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RadioPerillasNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RadioPerillasSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtAntorcha" alignment="3" min="-2" pref="0" max="-2" attributes="0"/>
+                          <Component id="txtPerillas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelPortaElectrodo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioPortaSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioPortaNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelAsas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioAsasSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioAsasNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtPortaElectrodo" alignment="3" min="-2" pref="0" max="-2" attributes="0"/>
+                      <Component id="txtAsas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelPinza" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioPinzaSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioPinzaNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelBaseRuedas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioRuedasSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioRuedasNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtPinzaMasa" alignment="3" min="-2" pref="0" max="-2" attributes="0"/>
+                      <Component id="txtBasedeRuedas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelCableAcometica" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioCableSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioCableNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelCarrete" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioCarreteSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioCarreteNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCableAcometida" alignment="3" min="-2" pref="0" max="-2" attributes="0"/>
+                      <Component id="txtCarrete" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelClavija" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioClavijaSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioClavijaNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioConsumiblesSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioConsumiblesNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelConsumibles" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtClavija" alignment="3" min="-2" pref="0" max="-2" attributes="0"/>
+                      <Component id="txtConsumibles" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelReguladorGas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioReguladorSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioReguladorNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelChupon" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioChuponSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioChuponNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtReguladorGas" alignment="3" min="-2" pref="0" max="-2" attributes="0"/>
+                      <Component id="txtChupon" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelManguera" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioMangueraSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioMangueraNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelOtros" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioOtrosSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioOtrosNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtMangueraGas" alignment="3" min="-2" pref="0" max="-2" attributes="0"/>
+                      <Component id="txtOtros" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelPernos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioPernosSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioPernosNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtPernos" alignment="3" min="-2" pref="0" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelRidillos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioRidillosSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RadioRidillosNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtRidillos" alignment="3" min="-2" pref="0" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                  <Component id="LabelDiagnostico" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                  <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel4" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCantAccesorios" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDescAccesorios" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAgregarAccesorios" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCodAccesorios" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnEditarAccesorios" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jScrollPane3" min="-2" pref="64" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="LabelElementos1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ELEMENTOS DE LOS EQUIPOS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelElementos2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ELEMENTOS DE LOS EQUIPOS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelAntorcha">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ANTORCHA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelPortaElectrodo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="PORTAELECTRODO"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioPortaSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesportaelectrodo"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RadioPortaSiActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioPortaNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesportaelectrodo"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelPinza">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="PINZA MASA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioPinzaSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonespinzamasa"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioPinzaNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonespinzamasa"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelCableAcometica">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CABLE ACOMETIDA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioCableSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonescableacometida"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioCableNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonescableacometida"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelClavija">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CLAVIJA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioClavijaSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesclavija"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioClavijaNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesclavija"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelReguladorGas">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="REGULADOR DE GAS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioReguladorSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesreguladorgas"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioReguladorNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesreguladorgas"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelManguera">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="MANGUERA DE GAS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioMangueraSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesmangueragas"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioMangueraNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesmangueragas"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelPernos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="PERNOS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioPernosSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonespernos"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioPernosNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonespernos"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelRidillos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="RIDILLOS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioRidillosSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesridillos"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioRidillosNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesridillos"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelPerillas">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="PERILLAS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioPerillasSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesperillas"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioPerillasNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesperillas"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelAsas">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ASAS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioAsasSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesasas"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioAsasNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesasas"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelBaseRuedas">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="BASE DE RUEDAS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioRuedasSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesbaseruedas"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioRuedasNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesbaseruedas"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelCarrete">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CARRETE"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioCarreteSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonescarrete"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioCarreteNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonescarrete"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelOtros">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="OTROS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioConsumiblesSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesconsumibles"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioConsumiblesNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesconsumibles"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelChupon">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CHUP&#xd3;N O CONDUCTOR"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioChuponSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botoneschupon"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioChuponNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botoneschupon"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelDiagnostico">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="DIAGNOSTICO"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="txtDiagnostico">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="TableDiagnostico">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="3" rowCount="0">
+                    <Column editable="true" title="COD. P" type="java.lang.Object"/>
+                    <Column editable="true" title="CANT." type="java.lang.Object"/>
+                    <Column editable="true" title="DESCRIPCION" type="java.lang.Object"/>
+                  </Table>
+                </Property>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TableDiagnosticoMouseClicked"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="LabelConsumibles">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CONSUMIBLES"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioOtrosSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesotros"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioOtrosNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesotros"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Cursor Por defecto"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RadioOtrosNoActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioAntorchaNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesantorcha"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="NO"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioAntorchaSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesantorcha"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SI"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtAntorcha">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtPortaElectrodo">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtPinzaMasa">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCableAcometida">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtClavija">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtReguladorGas">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtMangueraGas">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtPernos">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtPerillas">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtRidillos">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[0, 20]"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtAsas">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtBasedeRuedas">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCarrete">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtConsumibles">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtChupon">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtOtros">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="COD.P"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CANT."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCantAccesorios">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCantAccesoriosActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="DESCRIPCI&#xd3;N"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtDescAccesorios">
+        </Component>
+        <Component class="javax.swing.JButton" name="btnAgregarAccesorios">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="AGREGAR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarAccesoriosActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCodAccesorios">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodAccesoriosActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnEditarAccesorios">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="EDITAR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarAccesoriosActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JTextField" name="txtNroOrden">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNroOrdenActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LabelOrden">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ORDEN DE SERVICIO"/>
+      </Properties>
+    </Component>
+    <Component class="com.toedter.calendar.JDateChooser" name="txtFechaSalida">
+      <Properties>
+        <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LabelFechaSalida">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="FECHA DE SALIDA:"/>
+      </Properties>
+    </Component>
+    <Component class="com.toedter.calendar.JDateChooser" name="txtFechaIngreso">
+      <Properties>
+        <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LabelFechaIngreso">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="FECHA DE INGRESO:"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>

@@ -4,20 +4,31 @@
  * and open the template in the editor.
  */
 package form;
+import com.mysql.cj.Query;
 import config.Conexion;
 import java.awt.Image;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.nio.file.Files;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -27,12 +38,13 @@ public class Formulario extends javax.swing.JFrame{
     Conexion cn = new Conexion();
     Connection con;
     Statement st;
+    
     ResultSet rs;
-    int Nro_Orden = 17;
+    DefaultTableModel model;
+    DefaultTableModel model2;
     String Ruta = "";
     String Ruta2 = "";
     String Ruta3 = "";
-    
     //Inicio Inicio=new Inicio();
 
     /**
@@ -41,9 +53,12 @@ public class Formulario extends javax.swing.JFrame{
     public Formulario() {
         initComponents();
         setExtendedState(this.MAXIMIZED_BOTH); 
-        
-    }
+        listar();
+        listar2();
+        Nro_Orden();
+        sies();
 
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -70,10 +85,8 @@ public class Formulario extends javax.swing.JFrame{
         botoneschupon = new javax.swing.ButtonGroup();
         botonesotros = new javax.swing.ButtonGroup();
         jButton2 = new javax.swing.JButton();
-        txtFechaIngreso = new com.toedter.calendar.JDateChooser();
-        LabelFechaIngreso = new javax.swing.JLabel();
-        txtFechaSalida = new com.toedter.calendar.JDateChooser();
-        LabelFechaSalida = new javax.swing.JLabel();
+        GRUPOFOTO = new javax.swing.ButtonGroup();
+        GRUPOSERVICIO = new javax.swing.ButtonGroup();
         LabelOrden = new javax.swing.JLabel();
         LabelNro = new javax.swing.JLabel();
         Panel1 = new javax.swing.JPanel();
@@ -126,11 +139,14 @@ public class Formulario extends javax.swing.JFrame{
         txtServicio = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtCantPlanchado = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jTextField4 = new javax.swing.JTextField();
+        txtDescPlanchado = new javax.swing.JTextField();
+        btnAgregarPlanchado = new javax.swing.JButton();
+        txtCodPlanchado = new javax.swing.JTextField();
+        labelfoto = new javax.swing.JLabel();
+        RadioFotoSi = new javax.swing.JRadioButton();
+        RadioFotoNo = new javax.swing.JRadioButton();
         jLabel46 = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
         Panel2 = new javax.swing.JPanel();
@@ -207,25 +223,17 @@ public class Formulario extends javax.swing.JFrame{
         txtOtros = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtCantAccesorios = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jTextField7 = new javax.swing.JTextField();
+        txtDescAccesorios = new javax.swing.JTextField();
+        btnAgregarAccesorios = new javax.swing.JButton();
+        txtCodAccesorios = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         txtNroOrden = new javax.swing.JTextField();
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Volver.png"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        txtFechaIngreso.setDateFormatString("yyyy-MM-dd");
-
-        LabelFechaIngreso.setText("FECHA DE INGRESO:");
-
-        txtFechaSalida.setDateFormatString("yyyy-MM-dd");
-
-        LabelFechaSalida.setText("FECHA DE SALIDA:");
 
         LabelOrden.setText("ORDEN DE SERVICIO");
 
@@ -249,12 +257,16 @@ public class Formulario extends javax.swing.JFrame{
 
         LabelServicio.setText("SERVICIO SOLICITADO:");
 
+        GRUPOSERVICIO.add(CheckBoxGarantia);
         CheckBoxGarantia.setText("GARANTÍA");
 
+        GRUPOSERVICIO.add(CheckBoxReparacion);
         CheckBoxReparacion.setText("REPARACIÓN");
 
+        GRUPOSERVICIO.add(CheckBoxMantenimento);
         CheckBoxMantenimento.setText("MANTENIMIENTO");
 
+        GRUPOSERVICIO.add(CheckBoxReclamo);
         CheckBoxReclamo.setText("RECLAMO");
 
         LabelFalla.setText("FALLA REPORTADA POR EL CLIENTE:");
@@ -325,21 +337,34 @@ public class Formulario extends javax.swing.JFrame{
 
         jLabel2.setText("CANT.");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtCantPlanchado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtCantPlanchadoActionPerformed(evt);
             }
         });
 
         jLabel3.setText("DESCRIPCIÓN");
 
-        jButton3.setText("AGREGAR");
-
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarPlanchado.setText("AGREGAR");
+        btnAgregarPlanchado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                btnAgregarPlanchadoActionPerformed(evt);
             }
         });
+
+        txtCodPlanchado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodPlanchadoActionPerformed(evt);
+            }
+        });
+
+        labelfoto.setText("DESEA SUBIR FOTOS");
+
+        GRUPOFOTO.add(RadioFotoSi);
+        RadioFotoSi.setText("SI");
+
+        GRUPOFOTO.add(RadioFotoNo);
+        RadioFotoNo.setText("NO");
 
         javax.swing.GroupLayout Panel1Layout = new javax.swing.GroupLayout(Panel1);
         Panel1.setLayout(Panel1Layout);
@@ -424,17 +449,27 @@ public class Formulario extends javax.swing.JFrame{
                     .addGroup(Panel1Layout.createSequentialGroup()
                         .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Panel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
                                 .addComponent(btnIngreso)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(18, 18, 18)
                                 .addComponent(labelIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(labelReparacion, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(72, 72, 72)
+                                .addComponent(btnReparacion)
+                                .addGap(18, 18, 18)
+                                .addComponent(labelReparacion, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(Panel1Layout.createSequentialGroup()
-                                .addComponent(LabelFotoIngreso)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(LabelFotoReparacion)))
-                        .addGap(108, 108, 108)
+                                .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LabelFotoIngreso)
+                                    .addGroup(Panel1Layout.createSequentialGroup()
+                                        .addGap(64, 64, 64)
+                                        .addComponent(labelfoto)))
+                                .addGap(37, 37, 37)
+                                .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(Panel1Layout.createSequentialGroup()
+                                        .addComponent(RadioFotoSi)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(RadioFotoNo))
+                                    .addComponent(LabelFotoReparacion))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Panel1Layout.createSequentialGroup()
                                 .addComponent(btnSalida)
@@ -442,22 +477,19 @@ public class Formulario extends javax.swing.JFrame{
                                 .addComponent(labelSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(LabelFotoSalida)))
                     .addGroup(Panel1Layout.createSequentialGroup()
-                        .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnReparacion)
-                            .addGroup(Panel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel3)))
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCodPlanchado, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtCantPlanchado, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtDescPlanchado, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)))
+                        .addComponent(btnAgregarPlanchado)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Panel1Layout.setVerticalGroup(
@@ -516,38 +548,43 @@ public class Formulario extends javax.swing.JFrame{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabelFalla)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelfoto)
+                            .addComponent(RadioFotoSi)
+                            .addComponent(RadioFotoNo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LabelFotoIngreso)
                             .addComponent(LabelFotoReparacion))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnReparacion)
-                            .addComponent(labelReparacion, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnReparacion)
+                                .addComponent(btnIngreso))
+                            .addComponent(labelReparacion, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(Panel1Layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
+                        .addGap(24, 24, 24)
                         .addComponent(LabelFotoSalida)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(labelIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnIngreso))
                             .addComponent(btnSalida))))
-                .addGap(7, 7, 7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabelPlanchado)
                 .addGap(9, 9, 9)
                 .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCantPlanchado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDescPlanchado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAgregarPlanchado)
+                    .addComponent(txtCodPlanchado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(38, Short.MAX_VALUE))
@@ -759,19 +796,24 @@ public class Formulario extends javax.swing.JFrame{
 
         jLabel5.setText("CANT.");
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txtCantAccesorios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txtCantAccesoriosActionPerformed(evt);
             }
         });
 
         jLabel6.setText("DESCRIPCIÓN");
 
-        jButton4.setText("AGREGAR");
-
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarAccesorios.setText("AGREGAR");
+        btnAgregarAccesorios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                btnAgregarAccesoriosActionPerformed(evt);
+            }
+        });
+
+        txtCodAccesorios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodAccesoriosActionPerformed(evt);
             }
         });
 
@@ -780,7 +822,7 @@ public class Formulario extends javax.swing.JFrame{
         Panel2Layout.setHorizontalGroup(
             Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel2Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addGap(25, 25, 25)
                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtPernos)
                     .addComponent(txtMangueraGas, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -848,7 +890,7 @@ public class Formulario extends javax.swing.JFrame{
                                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(Panel2Layout.createSequentialGroup()
                                         .addComponent(RadioPerillasNo)
-                                        .addContainerGap(30, Short.MAX_VALUE))
+                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(Panel2Layout.createSequentialGroup()
                                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(RadioChuponNo)
@@ -914,12 +956,12 @@ public class Formulario extends javax.swing.JFrame{
                                         .addComponent(RadioPortaSi)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(RadioPortaNo)))))
-                        .addContainerGap(303, Short.MAX_VALUE))))
+                        .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(16, 16, 16)
                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LabelDiagnostico)
-                    .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(Panel2Layout.createSequentialGroup()
                             .addComponent(jScrollPane4)
                             .addGap(10, 10, 10))
@@ -929,17 +971,17 @@ public class Formulario extends javax.swing.JFrame{
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel2Layout.createSequentialGroup()
                                     .addComponent(jLabel4)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
+                                    .addComponent(txtCodAccesorios, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                                     .addComponent(jLabel5)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCantAccesorios, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
                                     .addComponent(jLabel6)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDescAccesorios, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton4)))
+                                    .addComponent(btnAgregarAccesorios)))
                             .addContainerGap()))))
         );
         Panel2Layout.setVerticalGroup(
@@ -1037,15 +1079,15 @@ public class Formulario extends javax.swing.JFrame{
                 .addComponent(LabelDiagnostico)
                 .addGap(5, 5, 5)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addGap(17, 17, 17)
                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCantAccesorios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDescAccesorios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAgregarAccesorios)
+                    .addComponent(txtCodAccesorios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -1059,6 +1101,11 @@ public class Formulario extends javax.swing.JFrame{
         });
 
         txtNroOrden.setEditable(false);
+        txtNroOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNroOrdenActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1068,66 +1115,50 @@ public class Formulario extends javax.swing.JFrame{
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelFechaIngreso)
-                            .addComponent(LabelFechaSalida))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtFechaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(101, 101, 101)
-                        .addComponent(jLabel46)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(LabelNro)
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(LabelOrden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtNroOrden))
-                        .addGap(30, 30, 30)
-                        .addComponent(btnVolver)
-                        .addGap(26, 26, 26))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(Panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(9, 9, 9)))
-                        .addContainerGap())))
+                                .addGap(9, 9, 9))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(LabelNro)
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtNroOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(235, 235, 235)
+                                .addComponent(jLabel46))
+                            .addComponent(LabelOrden))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnVolver)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(LabelFechaIngreso)
-                                    .addComponent(txtFechaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(LabelFechaSalida)))
-                            .addComponent(jLabel46))
-                        .addGap(4, 4, 4))
-                    .addComponent(btnVolver, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
                         .addComponent(LabelOrden)
-                        .addGap(21, 21, 21)
+                        .addGap(3, 3, 3)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LabelNro)
-                            .addComponent(txtNroOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtNroOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelNro))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnVolver)
+                            .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(Panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         pack();
@@ -1153,6 +1184,24 @@ public class Formulario extends javax.swing.JFrame{
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Agregarorden();
+        try {
+            con = cn.getConnection();
+            JasperReport jr = JasperCompileManager.compileReport("./src/reportes/cartillafinal.jrxml");
+            Map mp = new HashMap();
+            mp.put("Nro_Orden", txtNroOrden.getText());
+            
+            
+            JasperPrint jp = JasperFillManager.fillReport(jr, mp, con);
+            JasperViewer jv = new JasperViewer(jp, false);
+            jv.setTitle("Reporte Orden");
+            Inicio Inicio=new Inicio();
+            Inicio.setVisible(true);
+            this.setVisible(false);
+            jv.setVisible(true);
+            jv.setExtendedState(MAXIMIZED_BOTH);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se pudo generar Reporte"+e);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnIngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresoActionPerformed
@@ -1162,21 +1211,14 @@ public class Formulario extends javax.swing.JFrame{
 
         if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
             Ruta = fileChooser.getSelectedFile().getAbsolutePath();
-            Image mImagen = new ImageIcon(Ruta).getImage();
-            labelIngreso.setText("Subido");
+            labelIngreso.setText("Subido");            
+        }else{
+
         }
+        //falta hacer opcional la subida de fotos
+        
     }//GEN-LAST:event_btnIngresoActionPerformed
-    private byte[] getImagen(String Ruta) {
-        File imagen = new File(Ruta);
-        try {
-            byte[] icono = new byte[(int) imagen.length()];
-            InputStream input = new FileInputStream(imagen);
-            input.read(icono);
-            return icono;
-        } catch (Exception ex) {
-            return null;
-        }
-    }
+ 
     private void btnReparacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReparacionActionPerformed
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter extensionFilter = new FileNameExtensionFilter("JPG, PNG & GIF", "jpg", "png", "gif");
@@ -1187,18 +1229,10 @@ public class Formulario extends javax.swing.JFrame{
             Image mImagen = new ImageIcon(Ruta2).getImage();
             labelReparacion.setText("Subido");
         }
+        
+        
     }//GEN-LAST:event_btnReparacionActionPerformed
-    private byte[] getImagen2(String Ruta2) {
-        File imagen = new File(Ruta2);
-        try {
-            byte[] icono = new byte[(int) imagen.length()];
-            InputStream input = new FileInputStream(imagen);
-            input.read(icono);
-            return icono;
-        } catch (Exception ex) {
-            return null;
-        }
-    }
+
     private void btnSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalidaActionPerformed
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter extensionFilter = new FileNameExtensionFilter("JPG, PNG & GIF", "jpg", "png", "gif");
@@ -1209,57 +1243,179 @@ public class Formulario extends javax.swing.JFrame{
             Image mImagen = new ImageIcon(Ruta3).getImage();
             labelSalida.setText("Subido");
         }
+        
+        
     }//GEN-LAST:event_btnSalidaActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtCantPlanchadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantPlanchadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtCantPlanchadoActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtCantAccesoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantAccesoriosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtCantAccesoriosActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void txtCodAccesoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodAccesoriosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_txtCodAccesoriosActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtCodPlanchadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodPlanchadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-    
-    private byte[] getImagen3(String Ruta3) {
-        File imagen = new File(Ruta3);
+    }//GEN-LAST:event_txtCodPlanchadoActionPerformed
+
+    private void btnAgregarPlanchadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPlanchadoActionPerformed
+        //Planchado
+        String CodPlan = txtCodPlanchado.getText();
+        String CantPlan = txtCantPlanchado.getText();
+        String DescPlan = txtDescPlanchado.getText();
+        
+        //Tabla Planchado
         try {
-            byte[] icono = new byte[(int) imagen.length()];
-            InputStream input = new FileInputStream(imagen);
-            input.read(icono);
-            return icono;
-        } catch (Exception ex) {
-            return null;
+            if (CodPlan.equals("") || CantPlan.equals("")||DescPlan.equals("") ) {
+                JOptionPane.showMessageDialog(null, "Debe Ingresar Datos");
+                limpiarTabla(model);
+            } else {
+                String sql = "INSERT INTO `planchado`(`Cod_p`, `Cantidad`, `Descripcion`, `Nro_Orden`) VALUES ('" + CodPlan + "','" + CantPlan + "','" + DescPlan + "'," + txtNroOrden.getText() + ")";
+                con = cn.getConnection();
+                st = con.createStatement();
+                st.executeUpdate(sql);
+                limpiarTabla(model);
+            }
+
+        } catch (Exception e) {
         }
-    }
+        listar();
+        nuevo();
+    }//GEN-LAST:event_btnAgregarPlanchadoActionPerformed
+
+    private void btnAgregarAccesoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAccesoriosActionPerformed
+        //Accesorios
+        String CodAcce = txtCodAccesorios.getText();
+        String CantAcce = txtCantAccesorios.getText();
+        String DescAcce = txtDescAccesorios.getText();
+        
+        //Tabla Planchado
+        try {
+            if (CodAcce.equals("") || CantAcce.equals("")||DescAcce.equals("") ) {
+                JOptionPane.showMessageDialog(null, "Debe Ingresar Datos");
+                limpiarTabla2(model2);
+            } else {
+                String sql = "INSERT INTO `accesorios`(`cod_p`, `Cantidad`, `Descripcion`, `Nro_Orden`) VALUES ('" + CodAcce + "','" + CantAcce + "','" + DescAcce + "'," + txtNroOrden.getText() + ")";
+                con = cn.getConnection();
+                st = con.createStatement();
+                st.executeUpdate(sql);
+                limpiarTabla2(model2);
+            }
+
+        } catch (Exception e) {
+        }
+        listar2();
+        nuevo2();
+    }//GEN-LAST:event_btnAgregarAccesoriosActionPerformed
+
+    private void txtNroOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNroOrdenActionPerformed
+        
+    }//GEN-LAST:event_txtNroOrdenActionPerformed
+    
+    
     
     void Agregarorden() {
-                
-        String fechaInicio =((JTextField)txtFechaIngreso.getDateEditor().getUiComponent()).getText();
-        String fechaSalida =((JTextField)txtFechaSalida.getDateEditor().getUiComponent()).getText();
-        
+        //Cliente
         String Nombre = txtNombre.getText();
+        if (Nombre.equals("")){
+            txtNombre.setText("null");
+            txtNombre.getText();
+        }else{
+            txtNombre.getText();
+        }
         String Direccion = txtDireccion.getText();
+        if (Direccion.equals("")){
+            txtDireccion.setText("null");
+            txtDireccion.getText();
+        }else{
+            txtDireccion.getText();
+        }
         String RUC = txtRUC.getText();
+        if (RUC.equals("")){
+            txtRUC.setText("null");
+            txtRUC.getText();
+        }else{
+            txtRUC.getText();
+        }
         String DNI = txtDNI.getText();
+        if (DNI.equals("")){
+            txtDNI.setText("null");
+            txtDNI.getText();
+        }else{
+            txtDNI.getText();
+        }
         String Encargado = txtEncargado.getText();
+        if (Encargado.equals("")){
+            txtEncargado.setText("null");
+            txtEncargado.getText();
+        }else{
+            txtEncargado.getText();
+        }
         String Telefono = txtTelefono.getText();
-        
+        if (Telefono.equals("")){
+            txtTelefono.setText("null");
+            txtTelefono.getText();
+        }else{
+            txtTelefono.getText();
+        }
+        //Soldadora
         String Marca = txtMarca.getText();
+        if (Marca.equals("")){
+            txtMarca.setText("null");
+            txtMarca.getText();
+        }else{
+            txtMarca.getText();
+        }
         String Email = txtEmail.getText();
+        if (Email.equals("")){
+            txtEmail.setText("null");
+            txtEmail.getText();
+        }else{
+            txtEmail.getText();
+        }
         String Modelo = txtModelo.getText();
+        if (Modelo.equals("")){
+            txtModelo.setText("null");
+            txtModelo.getText();
+        }else{
+            txtModelo.getText();
+        }
         String Code = txtCode.getText();
+        if (Code.equals("")){
+            txtCode.setText("null");
+            txtCode.getText();
+        }else{
+            txtCode.getText();
+        }
         String Horometro = txtHorometro.getText();
+        if (Horometro.equals("")){
+            txtHorometro.setText("null");
+            txtHorometro.getText();
+        }else{
+            txtHorometro.getText();
+        }
         String Nro_Serie = txt_NroSerie.getText();
+        if (Nro_Serie.equals("")){
+            txt_NroSerie.setText("null");
+            txt_NroSerie.getText();
+        }else{
+            txt_NroSerie.getText();
+        }
         
-        
+        //Encargado
         String Recepcionado_por = txtReceptor.getText();
+        if (Recepcionado_por.equals("")){
+            txtReceptor.setText("null");
+            txtReceptor.getText();
+        }else{
+            txtReceptor.getText();
+        }
+        
         if(CheckBoxGarantia.isSelected() && CheckBoxReparacion.isSelected()  && CheckBoxMantenimento.isSelected() && CheckBoxReclamo.isSelected()){
             JOptionPane.showMessageDialog(null, "No puede Seleccionar Todos");               
         }
@@ -1288,15 +1444,68 @@ public class Formulario extends javax.swing.JFrame{
             txtServicio.setText("RECLAMO");
         }
         String Falla_reportada = txtFallaReportada.getText();
+        if (Falla_reportada.equals("")){
+            txtFallaReportada.setText("null");
+            txtFallaReportada.getText();
+        }else{
+            txtFallaReportada.getText();
+        }
         
-        //RadioButtons
+        if(!RadioAntorchaSi.isSelected()){
+            RadioAntorchaNo.setSelected(true);
+        }
+        if(!RadioPortaSi.isSelected()){
+            RadioPortaNo.setSelected(true);
+        }
+        if(!RadioPinzaSi.isSelected()){
+            RadioPinzaNo.setSelected(true);
+        }
+        if(!RadioCableSi.isSelected()){
+            RadioCableNo.setSelected(true);
+        }
+        if(!RadioClavijaSi.isSelected()){
+            RadioClavijaNo.setSelected(true);
+        }
+        if(!RadioReguladorSi.isSelected()){
+            RadioReguladorNo.setSelected(true);
+        }
+        if(!RadioMangueraSi.isSelected()){
+            RadioMangueraNo.setSelected(true);
+        }
+        if(!RadioPernosSi.isSelected()){
+            RadioPernosNo.setSelected(true);
+        }
+        if(!RadioRidillosSi.isSelected()){
+            RadioRidillosNo.setSelected(true);
+        }
+        if(!RadioPerillasSi.isSelected()){
+            RadioPerillasNo.setSelected(true);
+        }
+        if(!RadioAsasSi.isSelected()){
+            RadioAsasNo.setSelected(true);
+        }
+        if(!RadioRuedasSi.isSelected()){
+            RadioRuedasNo.setSelected(true);
+        }
+        if(!RadioCarreteSi.isSelected()){
+            RadioCarreteNo.setSelected(true);
+        }
+        if(!RadioConsumiblesSi.isSelected()){
+            RadioConsumiblesNo.setSelected(true);
+        }
+        if(!RadioChuponSi.isSelected()){
+            RadioChuponNo.setSelected(true);
+        }
+        if(!RadioOtrosSi.isSelected()){
+            RadioOtrosNo.setSelected(true);
+        }
+        
+        //Elementos
         if(RadioAntorchaSi.isSelected()){
             txtAntorcha.setText("1");
-            System.out.print(txtAntorcha.getText());
         }
         if(RadioAntorchaNo.isSelected()){
-            txtAntorcha.setText("0");
-            System.out.print(txtAntorcha.getText());            
+            txtAntorcha.setText("0");          
         }
         if(RadioPortaSi.isSelected()){
             txtPortaElectrodo.setText("1");
@@ -1388,69 +1597,123 @@ public class Formulario extends javax.swing.JFrame{
         if(RadioOtrosNo.isSelected()){
             txtOtros.setText("0");
         }
-        String Diagnostico = txtDiagnostico.getText();
         
-        //Tabla Orden
+        
+       
+        
+        String Diagnostico = txtDiagnostico.getText();
+        if (Diagnostico.equals("")){
+            txtDiagnostico.setText("null");
+            txtDiagnostico.getText();
+        }else{
+            txtDiagnostico.getText();
+        }
+        
+        
+        
+        
         try {
-            if (fechaInicio.equals("") || fechaSalida.equals("")) {
-                JOptionPane.showMessageDialog(null, "Debe Ingresar La Fecha");               
+            if (txtNroOrden.equals("")) {
+                JOptionPane.showMessageDialog(null, "No hay Nro_Orden");
+                               
             } else {
-                String sql = "INSERT INTO orden(fecha_ingreso, fecha_salida) VALUES('" + fechaInicio + "','" + fechaSalida + "')";
+                String sql = "INSERT INTO cliente(Nombre, Direccion, RUC, DNI, Encargado, Telefono, Nro_Orden) VALUES('" + Nombre + "','" + Direccion + "','" + RUC + "','" + DNI + "','" + Encargado + "','" + Telefono + "'," + txtNroOrden.getText() + ")";
                 con = cn.getConnection();
                 st = con.createStatement();
-                st.executeUpdate(sql);
-
+                st.executeUpdate(sql);                
+                
             }
 
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se pudo guardar datos"+e);
+
+        }
+        
+        //Tabla Soldadora
+        if(RadioFotoSi.isSelected()){
+            LabelFotoIngreso.setEnabled(true);
+            LabelFotoReparacion.setEnabled(true);
+            LabelFotoSalida.setEnabled(true);
+            btnIngreso.setEnabled(true);
+            btnReparacion.setEnabled(true);
+            btnSalida.setEnabled(true);
+            try {
+
+            FileInputStream is = new FileInputStream(Ruta);
+            FileInputStream is1 = new FileInputStream(Ruta2);
+            FileInputStream is2 = new FileInputStream(Ruta3);
+
+            if (txtNroOrden.equals("")) {
+                JOptionPane.showMessageDialog(null, "No hay Nro_Orden");
+                               
+            } else {
+                con = cn.getConnection();
+                PreparedStatement st = con.prepareStatement("INSERT INTO `soldadora`(`Marca`, `Modelo`, `Nro_Serie`, `Code`, `Email`, `Horometro`, `Diagnostico`, `Foto_Ingreso`, `Foto_Reparacion`, `Foto_Salida`, `Nro_Orden`) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+                st.setString(1, Marca);
+                st.setString(2, Modelo);
+                st.setString(3, Nro_Serie);
+                st.setString(4, Code);
+                st.setString(5, Email);
+                st.setString(6, Horometro);
+                st.setString(7, Diagnostico);
+                st.setBlob(8, is);
+                st.setBlob(9, is1);
+                st.setBlob(10, is2);
+                st.setString(11, txtNroOrden.getText());                
+                st.execute();
+                is.close();
+                is1.close();
+                is2.close();
+                st.close();
+                JOptionPane.showMessageDialog(null, "Soldadora con foto registrada con Exito");
+                
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se pudo guardar datos"+e);
+
+        }
+        }
+        if(RadioFotoNo.isSelected()){
+            LabelFotoIngreso.setEnabled(false);
+            LabelFotoReparacion.setEnabled(false);
+            LabelFotoSalida.setEnabled(false);
+            btnIngreso.setEnabled(false);
+            btnReparacion.setEnabled(false);
+            btnSalida.setEnabled(false);
+            
+            try {
+            if (txtNroOrden.equals("")) {
+                JOptionPane.showMessageDialog(null, "No hay Nro_Orden");
+                               
+            } else {
+                String sql = "INSERT INTO `soldadora`(`Marca`, `Modelo`, `Nro_Serie`, `Code`, `Email`, `Horometro`, `Diagnostico`, `Foto_Ingreso`, `Foto_Reparacion`, `Foto_Salida`, `Nro_Orden`) VALUES ('" + Marca + "','" + Modelo + "','" + Nro_Serie + "','" + Code + "','" + Email + "','" + Horometro + "','" + Diagnostico + "'," + null + "," + null + "," + null + "," + txtNroOrden.getText() + ")";
+                con = cn.getConnection();
+                st = con.createStatement();
+                st.executeUpdate(sql);
+                JOptionPane.showMessageDialog(null, "Soldadora sin foto registrada con Exito");
+                
+                
+            }
+
+            } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "No se pudo guardar datos"+e);
 
-        }
-        //Tabla Cliente
-        try {
-            if (Nombre.equals("") || Direccion.equals("") || RUC.equals("") || DNI.equals("") || Encargado.equals("") || Telefono.equals("")) {
-                JOptionPane.showMessageDialog(null, "Debe Ingresar Datos");
-                               
-            } else {
-                String sql = "INSERT INTO cliente(Nombre, Direccion, RUC, DNI, Encargado, Telefono, Nro_Orden) VALUES('" + Nombre + "','" + Direccion + "','" + RUC + "','" + DNI + "','" + Encargado + "','" + Telefono + "','" + Nro_Orden + "')";
-                con = cn.getConnection();
-                st = con.createStatement();
-                st.executeUpdate(sql);
-                JOptionPane.showMessageDialog(null, "Usuario Registrado con Exito");
-                
-                
             }
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se pudo guardar datos"+e);
-
+            
+            
         }
-        //Tabla Soldadora
-        try {
-            if (Marca.equals("") || Email.equals("") || Modelo.equals("") || Code.equals("") || Horometro.equals("") || Nro_Serie.equals("")) {
-                JOptionPane.showMessageDialog(null, "Debe Ingresar Datos");
-                               
-            } else {
-                String sql = "INSERT INTO `soldadora`(`Marca`, `Modelo`, `Nro_Serie`, `Code`, `Email`, `Horometro`, `Diagnostico`, `Foto_Ingreso`, `Foto_Reparacion`, `Foto_Salida`, `Nro_Orden`) VALUES ('" + Marca + "','" + Modelo + "','" + Nro_Serie + "','" + Code + "','" + Email + "','" + Horometro + "','" + Diagnostico + "','" + 1 + "','" + 2 + "','" + 3 + "')";
-                con = cn.getConnection();
-                st = con.createStatement();
-                st.executeUpdate(sql);
-                JOptionPane.showMessageDialog(null, "Usuario Registrado con Exito");
-                
-                
-            }
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se pudo guardar datos"+e);
-
-        }
+        
+        
+        
+        
         //Tabla Encargado
         try {
-            if (Recepcionado_por.equals("") || Falla_reportada.equals("")) {
-                JOptionPane.showMessageDialog(null, "Debe Ingresar Datos");
+            if (txtNroOrden.equals("")) {
+                JOptionPane.showMessageDialog(null, "No hay Nro_Orden");
                                
             } else {
-                String sql = "INSERT INTO `encargado`(`Recepcionado_por`, `Servicio`, `Falla_reportada`, `Nro_Orden`) VALUES ('" + Recepcionado_por + "','" + txtServicio.getText() + "','" + Falla_reportada + "')";
+                String sql = "INSERT INTO `encargado`(`Recepcionado_por`, `Servicio`, `Falla_reportada`, `Nro_Orden`) VALUES ('" + Recepcionado_por + "','" + txtServicio.getText() + "','" + Falla_reportada + "'," + txtNroOrden.getText() + ")";
                 con = cn.getConnection();
                 st = con.createStatement();
                 st.executeUpdate(sql);
@@ -1463,12 +1726,13 @@ public class Formulario extends javax.swing.JFrame{
             JOptionPane.showMessageDialog(null, "No se pudo guardar datos"+e);
 
         }
-         
+        
+        //Tabla Elementos 
         try {
-            if (RadioAntorchaSi.equals("") || RadioAntorchaNo.equals("")) {
+            if (RadioAntorchaSi.equals("")) {
                 JOptionPane.showMessageDialog(null, "Debe Marcar Si o No");               
             } else {
-                String sql = "INSERT INTO `elementos`(`Antorcha`, `Porta_electrodo`, `pinza_masa`, `cable_acometida`, `clavija`, `regulador_gas`, `manguera_gas`, `pernos`, `ridillos`, `perillas`, `asas`, `base_ruedas`, `carrete`, `consumibles`, `chupon`, `otros`, `Nro_Orden`) VALUES (" + txtAntorcha.getText() + "," + txtPortaElectrodo.getText() + "," + txtPinzaMasa.getText() + "," + txtCableAcometida.getText() + "," + txtClavija.getText() + "," + txtReguladorGas.getText() + "," + txtMangueraGas.getText() + "," + txtPernos.getText() + "," + txtRidillos.getText() + "," + txtPerillas.getText() + "," + txtAsas.getText() + "," + txtBasedeRuedas.getText() + "," + txtCarrete.getText() + "," + txtConsumibles.getText() + "," + txtChupon.getText() + "," + txtOtros.getText() + ")";
+                String sql = "INSERT INTO `elementos`(`Antorcha`, `Porta_electrodo`, `pinza_masa`, `cable_acometida`, `clavija`, `regulador_gas`, `manguera_gas`, `pernos`, `ridillos`, `perillas`, `asas`, `base_ruedas`, `carrete`, `consumibles`, `chupon`, `otros`, `Nro_Orden`) VALUES (" + txtAntorcha.getText() + "," + txtPortaElectrodo.getText() + "," + txtPinzaMasa.getText() + "," + txtCableAcometida.getText() + "," + txtClavija.getText() + "," + txtReguladorGas.getText() + "," + txtMangueraGas.getText() + "," + txtPernos.getText() + "," + txtRidillos.getText() + "," + txtPerillas.getText() + "," + txtAsas.getText() + "," + txtBasedeRuedas.getText() + "," + txtCarrete.getText() + "," + txtConsumibles.getText() + "," + txtChupon.getText() + "," + txtOtros.getText() + "," + txtNroOrden.getText() + ")";
                 con = cn.getConnection();
                 st = con.createStatement();
                 st.executeUpdate(sql);
@@ -1482,7 +1746,105 @@ public class Formulario extends javax.swing.JFrame{
         
         
     }
-    
+    void listar() {
+        String sql = "SELECT * FROM `planchado` WHERE Nro_Orden LIKE "+ txtNroOrden.getText() +"";
+        try {
+            con = cn.getConnection();
+            st = con.createStatement();
+            rs = st.executeQuery(sql);
+            Object[] persona = new Object[4];
+//            String[] Titulos={"ID","DNI","NOMBRES"};         
+//            model=new DefaultTableModel(null,Titulos);   
+            model = (DefaultTableModel) TablePlanchado.getModel();
+            while (rs.next()) {
+                persona[0] = rs.getInt("Cod_p");
+                persona[1] = rs.getInt("Cantidad");
+                persona[2] = rs.getString("Descripcion");
+                persona[3] = rs.getInt("Nro_Orden");
+                model.addRow(persona);
+            }
+            TablePlanchado.setModel(model);
+
+        } catch (Exception e) {
+        }
+
+    }
+    void listar2() {
+        String sql = "SELECT * FROM `accesorios` WHERE Nro_Orden LIKE "+ txtNroOrden.getText() +"";
+        try {
+            con = cn.getConnection();
+            st = con.createStatement();
+            rs = st.executeQuery(sql);
+            Object[] persona = new Object[4];
+//            String[] Titulos={"ID","DNI","NOMBRES"};         
+//            model=new DefaultTableModel(null,Titulos);   
+            model2 = (DefaultTableModel) TableDiagnostico.getModel();
+            while (rs.next()) {
+                persona[0] = rs.getInt("Cod_p");
+                persona[1] = rs.getInt("Cantidad");
+                persona[2] = rs.getString("Descripcion");
+                persona[3] = rs.getInt("Nro_Orden");
+                model2.addRow(persona);
+            }
+            TableDiagnostico.setModel(model2);
+
+        } catch (Exception e) {
+        }
+
+    }
+    void nuevo() {
+        txtCodPlanchado.setText("");
+        txtCantPlanchado.setText("");
+        txtDescPlanchado.setText("");
+
+    }
+    void nuevo2() {
+        txtCodAccesorios.setText("");
+        txtCantAccesorios.setText("");
+        txtDescAccesorios.setText("");
+
+    }
+    void limpiarTabla(DefaultTableModel model) {
+        for (int i = 0; i <= TablePlanchado.getRowCount(); i++) {
+            model.removeRow(i);
+            i = i - 1;
+        }
+
+    }
+    void limpiarTabla2(DefaultTableModel model2) {
+        for (int i = 0; i <= TableDiagnostico.getRowCount(); i++) {
+            model2.removeRow(i);
+            i = i - 1;
+        }
+
+    }
+    void Nro_Orden(){
+        String sql = "select Max(Nro_Orden)+1 as Nro_Orden from orden";
+    try {
+
+        con = cn.getConnection();
+        st = con.createStatement();
+        rs = st.executeQuery(sql);
+        
+        while (rs.next ( ))
+        {
+           String Nro_Orden = rs.getString ("Nro_Orden");
+           txtNroOrden.setText(Nro_Orden);
+           
+        }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
+    void sies(){
+        String Nro_Or = txtNroOrden.getText();
+            if (Nro_Or.equals("")){
+               txtNroOrden.setText("5579");
+               txtNroOrden.getText();
+           }else{
+           }
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1490,6 +1852,8 @@ public class Formulario extends javax.swing.JFrame{
     private javax.swing.JCheckBox CheckBoxMantenimento;
     private javax.swing.JCheckBox CheckBoxReclamo;
     private javax.swing.JCheckBox CheckBoxReparacion;
+    private javax.swing.ButtonGroup GRUPOFOTO;
+    private javax.swing.ButtonGroup GRUPOSERVICIO;
     private javax.swing.JLabel LabelAntorcha;
     private javax.swing.JLabel LabelAsas;
     private javax.swing.JLabel LabelBaseRuedas;
@@ -1508,8 +1872,6 @@ public class Formulario extends javax.swing.JFrame{
     private javax.swing.JLabel LabelEmail;
     private javax.swing.JLabel LabelEncargado;
     private javax.swing.JLabel LabelFalla;
-    private javax.swing.JLabel LabelFechaIngreso;
-    private javax.swing.JLabel LabelFechaSalida;
     private javax.swing.JLabel LabelFotoIngreso;
     private javax.swing.JLabel LabelFotoReparacion;
     private javax.swing.JLabel LabelFotoSalida;
@@ -1548,6 +1910,8 @@ public class Formulario extends javax.swing.JFrame{
     private javax.swing.JRadioButton RadioClavijaSi;
     private javax.swing.JRadioButton RadioConsumiblesNo;
     private javax.swing.JRadioButton RadioConsumiblesSi;
+    private javax.swing.JRadioButton RadioFotoNo;
+    private javax.swing.JRadioButton RadioFotoSi;
     private javax.swing.JRadioButton RadioMangueraNo;
     private javax.swing.JRadioButton RadioMangueraSi;
     private javax.swing.JRadioButton RadioOtrosNo;
@@ -1584,14 +1948,14 @@ public class Formulario extends javax.swing.JFrame{
     private javax.swing.ButtonGroup botonesportaelectrodo;
     private javax.swing.ButtonGroup botonesreguladorgas;
     private javax.swing.ButtonGroup botonesridillos;
+    private javax.swing.JButton btnAgregarAccesorios;
+    private javax.swing.JButton btnAgregarPlanchado;
     private javax.swing.JButton btnIngreso;
     private javax.swing.JButton btnReparacion;
     private javax.swing.JButton btnSalida;
     private javax.swing.JButton btnVolver;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -1603,32 +1967,31 @@ public class Formulario extends javax.swing.JFrame{
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel labelIngreso;
     private javax.swing.JLabel labelReparacion;
     private javax.swing.JLabel labelSalida;
+    private javax.swing.JLabel labelfoto;
     private javax.swing.JTextField txtAntorcha;
     private javax.swing.JTextField txtAsas;
     private javax.swing.JTextField txtBasedeRuedas;
     private javax.swing.JTextField txtCableAcometida;
+    private javax.swing.JTextField txtCantAccesorios;
+    private javax.swing.JTextField txtCantPlanchado;
     private javax.swing.JTextField txtCarrete;
     private javax.swing.JTextField txtChupon;
     private javax.swing.JTextField txtClavija;
+    private javax.swing.JTextField txtCodAccesorios;
+    private javax.swing.JTextField txtCodPlanchado;
     private javax.swing.JTextField txtCode;
     private javax.swing.JTextField txtConsumibles;
     private javax.swing.JTextField txtDNI;
+    private javax.swing.JTextField txtDescAccesorios;
+    private javax.swing.JTextField txtDescPlanchado;
     private javax.swing.JTextArea txtDiagnostico;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEncargado;
     private javax.swing.JTextArea txtFallaReportada;
-    private com.toedter.calendar.JDateChooser txtFechaIngreso;
-    private com.toedter.calendar.JDateChooser txtFechaSalida;
     private javax.swing.JTextField txtHorometro;
     private javax.swing.JTextField txtMangueraGas;
     private javax.swing.JTextField txtMarca;

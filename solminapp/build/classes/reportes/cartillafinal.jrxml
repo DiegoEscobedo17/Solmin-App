@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cartillafinal" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b6735779-d468-4952-8332-ffeb4df83576">
 	<property name="ireport.zoom" value="0.7513148009015804"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="96"/>
+	<property name="ireport.y" value="0"/>
 	<style name="table">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -363,259 +363,109 @@
 			<pen lineWidth="0.5" lineColor="#000000"/>
 		</box>
 	</style>
-	<subDataset name="planchado" uuid="87710d27-c6e6-4c32-96f9-5698d119195a">
-		<parameter name="Nro_Orden" class="java.lang.Integer">
+	<style name="table 18">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 18_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 18_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 18_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 19">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 19_TH" mode="Opaque" backcolor="#A52A2A">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 19_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 19_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 20">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 20_TH" mode="Opaque" backcolor="#7D3F3F">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 20_CH" mode="Opaque" backcolor="#E6CFCF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 20_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Planchado" uuid="7e67fe95-83a3-43d3-9ece-a208758c491e">
+		<parameter name="Nro_Orden" class="java.lang.String">
 			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 		</parameter>
 		<queryString>
 			<![CDATA[SELECT
-     orden.Nro_Orden,orden.fecha_ingreso,orden.fecha_salida,
-     accesorios.`cod_p` AS accesorios_cod_p,
-     accesorios.`Cantidad` AS accesorios_Cantidad,
-     accesorios.`Descripcion` AS accesorios_Descripcion,
-     accesorios.`Nro_Orden` AS accesorios_Nro_Orden,
-     cliente.`Nombre` AS cliente_Nombre,
-     cliente.`Direccion` AS cliente_Direccion,
-     cliente.`RUC` AS cliente_RUC,
-     cliente.`DNI` AS cliente_DNI,
-     cliente.`Encargado` AS cliente_Encargado,
-     cliente.`Telefono` AS cliente_Telefono,
-     cliente.`Nro_Orden` AS cliente_Nro_Orden,
-     elementos.`Antorcha` AS elementos_Antorcha,
-     elementos.`Porta_electrodo` AS elementos_Porta_electrodo,
-     elementos.`pinza_masa` AS elementos_pinza_masa,
-     elementos.`cable_acometida` AS elementos_cable_acometida,
-     elementos.`clavija` AS elementos_clavija,
-     elementos.`regulador_gas` AS elementos_regulador_gas,
-     elementos.`manguera_gas` AS elementos_manguera_gas,
-     elementos.`pernos` AS elementos_pernos,
-     elementos.`ridillos` AS elementos_ridillos,
-     elementos.`perillas` AS elementos_perillas,
-     elementos.`asas` AS elementos_asas,
-     elementos.`base_ruedas` AS elementos_base_ruedas,
-     elementos.`carrete` AS elementos_carrete,
-     elementos.`consumibles` AS elementos_consumibles,
-     elementos.`chupon` AS elementos_chupon,
-     elementos.`otros` AS elementos_otros,
-     elementos.`Nro_Orden` AS elementos_Nro_Orden,
-     encargado.`Recepcionado_por` AS encargado_Recepcionado_por,
-     encargado.`Servicio` AS encargado_Servicio,
-     encargado.`Falla_reportada` AS encargado_Falla_reportada,
-     encargado.`Nro_Orden` AS encargado_Nro_Orden,
      planchado.`Cod_p` AS planchado_Cod_p,
      planchado.`Cantidad` AS planchado_Cantidad,
      planchado.`Descripcion` AS planchado_Descripcion,
      planchado.`Nro_Orden` AS planchado_Nro_Orden,
-     soldadora.`Marca` AS soldadora_Marca,
-     soldadora.`Modelo` AS soldadora_Modelo,
-     soldadora.`Nro_Serie` AS soldadora_Nro_Serie,
-     soldadora.`Code` AS soldadora_Code,
-     soldadora.`Email` AS soldadora_Email,
-     soldadora.`Horometro` AS soldadora_Horometro,
-     soldadora.`Diagnostico` AS soldadora_Diagnostico,
-     soldadora.`Foto_Ingreso` AS soldadora_Foto_Ingreso,
-     soldadora.`Foto_Reparacion` AS soldadora_Foto_Reparacion,
-     soldadora.`Foto_Salida` AS soldadora_Foto_Salida,
-     soldadora.`Nro_Orden` AS soldadora_Nro_Orden,
-     orden.`Nro_Orden` AS orden_Nro_Orden,
-     orden.`fecha_ingreso` AS orden_fecha_ingreso,
-     orden.`fecha_salida` AS orden_fecha_salida
+     orden.`Nro_Orden` AS orden_Nro_Orden
 FROM
-     `orden` orden INNER JOIN `accesorios` accesorios ON orden.`Nro_Orden` = accesorios.`Nro_Orden`
-     INNER JOIN `cliente` cliente ON orden.`Nro_Orden` = cliente.`Nro_Orden`
-     INNER JOIN `elementos` elementos ON orden.`Nro_Orden` = elementos.`Nro_Orden`
-     INNER JOIN `encargado` encargado ON orden.`Nro_Orden` = encargado.`Nro_Orden`
-     INNER JOIN `planchado` planchado ON orden.`Nro_Orden` = planchado.`Nro_Orden`
-     INNER JOIN `soldadora` soldadora ON orden.`Nro_Orden` = soldadora.`Nro_Orden`
-WHERE orden.`Nro_Orden` LIKE $P{Nro_Orden}]]>
+     `orden` orden INNER JOIN `planchado` planchado ON orden.`Nro_Orden` = planchado.`Nro_Orden`
+Where orden.Nro_Orden LIKE $P{Nro_Orden}]]>
 		</queryString>
-		<field name="Nro_Orden" class="java.lang.Integer">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="fecha_ingreso" class="java.sql.Date">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="fecha_salida" class="java.sql.Date">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="accesorios_cod_p" class="java.lang.Integer"/>
-		<field name="accesorios_Cantidad" class="java.lang.String"/>
-		<field name="accesorios_Descripcion" class="java.lang.String"/>
-		<field name="accesorios_Nro_Orden" class="java.lang.Integer"/>
-		<field name="cliente_Nombre" class="java.lang.String"/>
-		<field name="cliente_Direccion" class="java.lang.String"/>
-		<field name="cliente_RUC" class="java.lang.String"/>
-		<field name="cliente_DNI" class="java.lang.String"/>
-		<field name="cliente_Encargado" class="java.lang.String"/>
-		<field name="cliente_Telefono" class="java.lang.String"/>
-		<field name="cliente_Nro_Orden" class="java.lang.Integer"/>
-		<field name="elementos_Antorcha" class="java.lang.Integer"/>
-		<field name="elementos_Porta_electrodo" class="java.lang.Integer"/>
-		<field name="elementos_pinza_masa" class="java.lang.Integer"/>
-		<field name="elementos_cable_acometida" class="java.lang.Integer"/>
-		<field name="elementos_clavija" class="java.lang.Integer"/>
-		<field name="elementos_regulador_gas" class="java.lang.Integer"/>
-		<field name="elementos_manguera_gas" class="java.lang.Integer"/>
-		<field name="elementos_pernos" class="java.lang.Integer"/>
-		<field name="elementos_ridillos" class="java.lang.Integer"/>
-		<field name="elementos_perillas" class="java.lang.Integer"/>
-		<field name="elementos_asas" class="java.lang.Integer"/>
-		<field name="elementos_base_ruedas" class="java.lang.Integer"/>
-		<field name="elementos_carrete" class="java.lang.Integer"/>
-		<field name="elementos_consumibles" class="java.lang.Integer"/>
-		<field name="elementos_chupon" class="java.lang.Integer"/>
-		<field name="elementos_otros" class="java.lang.Integer"/>
-		<field name="elementos_Nro_Orden" class="java.lang.Integer"/>
-		<field name="encargado_Recepcionado_por" class="java.lang.String"/>
-		<field name="encargado_Servicio" class="java.lang.String"/>
-		<field name="encargado_Falla_reportada" class="java.lang.String"/>
-		<field name="encargado_Nro_Orden" class="java.lang.Integer"/>
 		<field name="planchado_Cod_p" class="java.lang.Integer"/>
 		<field name="planchado_Cantidad" class="java.lang.String"/>
 		<field name="planchado_Descripcion" class="java.lang.String"/>
 		<field name="planchado_Nro_Orden" class="java.lang.Integer"/>
-		<field name="soldadora_Marca" class="java.lang.String"/>
-		<field name="soldadora_Modelo" class="java.lang.String"/>
-		<field name="soldadora_Nro_Serie" class="java.lang.String"/>
-		<field name="soldadora_Code" class="java.lang.String"/>
-		<field name="soldadora_Email" class="java.lang.String"/>
-		<field name="soldadora_Horometro" class="java.lang.String"/>
-		<field name="soldadora_Diagnostico" class="java.lang.String"/>
-		<field name="soldadora_Foto_Ingreso" class="java.lang.Object"/>
-		<field name="soldadora_Foto_Reparacion" class="java.lang.Object"/>
-		<field name="soldadora_Foto_Salida" class="java.lang.Object"/>
-		<field name="soldadora_Nro_Orden" class="java.lang.Integer"/>
 		<field name="orden_Nro_Orden" class="java.lang.Integer"/>
-		<field name="orden_fecha_ingreso" class="java.sql.Date"/>
-		<field name="orden_fecha_salida" class="java.sql.Date"/>
 	</subDataset>
-	<subDataset name="accesorios" uuid="f53012e0-0fc5-412d-9815-42e1255bedf0">
-		<parameter name="Nro_Orden" class="java.lang.Integer">
+	<subDataset name="Accesorios" uuid="65f06bd1-c3fa-4fcb-ad7d-cea3d7c53dfc">
+		<parameter name="Nro_Orden" class="java.lang.String">
 			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 		</parameter>
 		<queryString>
 			<![CDATA[SELECT
-     orden.Nro_Orden,orden.fecha_ingreso,orden.fecha_salida,
      accesorios.`cod_p` AS accesorios_cod_p,
      accesorios.`Cantidad` AS accesorios_Cantidad,
      accesorios.`Descripcion` AS accesorios_Descripcion,
      accesorios.`Nro_Orden` AS accesorios_Nro_Orden,
-     cliente.`Nombre` AS cliente_Nombre,
-     cliente.`Direccion` AS cliente_Direccion,
-     cliente.`RUC` AS cliente_RUC,
-     cliente.`DNI` AS cliente_DNI,
-     cliente.`Encargado` AS cliente_Encargado,
-     cliente.`Telefono` AS cliente_Telefono,
-     cliente.`Nro_Orden` AS cliente_Nro_Orden,
-     elementos.`Antorcha` AS elementos_Antorcha,
-     elementos.`Porta_electrodo` AS elementos_Porta_electrodo,
-     elementos.`pinza_masa` AS elementos_pinza_masa,
-     elementos.`cable_acometida` AS elementos_cable_acometida,
-     elementos.`clavija` AS elementos_clavija,
-     elementos.`regulador_gas` AS elementos_regulador_gas,
-     elementos.`manguera_gas` AS elementos_manguera_gas,
-     elementos.`pernos` AS elementos_pernos,
-     elementos.`ridillos` AS elementos_ridillos,
-     elementos.`perillas` AS elementos_perillas,
-     elementos.`asas` AS elementos_asas,
-     elementos.`base_ruedas` AS elementos_base_ruedas,
-     elementos.`carrete` AS elementos_carrete,
-     elementos.`consumibles` AS elementos_consumibles,
-     elementos.`chupon` AS elementos_chupon,
-     elementos.`otros` AS elementos_otros,
-     elementos.`Nro_Orden` AS elementos_Nro_Orden,
-     encargado.`Recepcionado_por` AS encargado_Recepcionado_por,
-     encargado.`Servicio` AS encargado_Servicio,
-     encargado.`Falla_reportada` AS encargado_Falla_reportada,
-     encargado.`Nro_Orden` AS encargado_Nro_Orden,
-     orden.`Nro_Orden` AS orden_Nro_Orden,
-     orden.`fecha_ingreso` AS orden_fecha_ingreso,
-     orden.`fecha_salida` AS orden_fecha_salida,
-     planchado.`Cod_p` AS planchado_Cod_p,
-     planchado.`Cantidad` AS planchado_Cantidad,
-     planchado.`Descripcion` AS planchado_Descripcion,
-     planchado.`Nro_Orden` AS planchado_Nro_Orden,
-     soldadora.`Marca` AS soldadora_Marca,
-     soldadora.`Modelo` AS soldadora_Modelo,
-     soldadora.`Nro_Serie` AS soldadora_Nro_Serie,
-     soldadora.`Code` AS soldadora_Code,
-     soldadora.`Email` AS soldadora_Email,
-     soldadora.`Horometro` AS soldadora_Horometro,
-     soldadora.`Diagnostico` AS soldadora_Diagnostico,
-     soldadora.`Foto_Ingreso` AS soldadora_Foto_Ingreso,
-     soldadora.`Foto_Reparacion` AS soldadora_Foto_Reparacion,
-     soldadora.`Foto_Salida` AS soldadora_Foto_Salida,
-     soldadora.`Nro_Orden` AS soldadora_Nro_Orden
+     orden.`Nro_Orden` AS orden_Nro_Orden
 FROM
      `orden` orden INNER JOIN `accesorios` accesorios ON orden.`Nro_Orden` = accesorios.`Nro_Orden`
-     INNER JOIN `cliente` cliente ON orden.`Nro_Orden` = cliente.`Nro_Orden`
-     INNER JOIN `elementos` elementos ON orden.`Nro_Orden` = elementos.`Nro_Orden`
-     INNER JOIN `encargado` encargado ON orden.`Nro_Orden` = encargado.`Nro_Orden`
-     INNER JOIN `planchado` planchado ON orden.`Nro_Orden` = planchado.`Nro_Orden`
-     INNER JOIN `soldadora` soldadora ON orden.`Nro_Orden` = soldadora.`Nro_Orden`
-WHERE orden.`Nro_Orden` LIKE $P{Nro_Orden}]]>
+Where orden.Nro_Orden LIKE $P{Nro_Orden}]]>
 		</queryString>
-		<field name="Nro_Orden" class="java.lang.Integer">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="fecha_ingreso" class="java.sql.Date">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="fecha_salida" class="java.sql.Date">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
 		<field name="accesorios_cod_p" class="java.lang.Integer"/>
 		<field name="accesorios_Cantidad" class="java.lang.String"/>
 		<field name="accesorios_Descripcion" class="java.lang.String"/>
 		<field name="accesorios_Nro_Orden" class="java.lang.Integer"/>
-		<field name="cliente_Nombre" class="java.lang.String"/>
-		<field name="cliente_Direccion" class="java.lang.String"/>
-		<field name="cliente_RUC" class="java.lang.String"/>
-		<field name="cliente_DNI" class="java.lang.String"/>
-		<field name="cliente_Encargado" class="java.lang.String"/>
-		<field name="cliente_Telefono" class="java.lang.String"/>
-		<field name="cliente_Nro_Orden" class="java.lang.Integer"/>
-		<field name="elementos_Antorcha" class="java.lang.Integer"/>
-		<field name="elementos_Porta_electrodo" class="java.lang.Integer"/>
-		<field name="elementos_pinza_masa" class="java.lang.Integer"/>
-		<field name="elementos_cable_acometida" class="java.lang.Integer"/>
-		<field name="elementos_clavija" class="java.lang.Integer"/>
-		<field name="elementos_regulador_gas" class="java.lang.Integer"/>
-		<field name="elementos_manguera_gas" class="java.lang.Integer"/>
-		<field name="elementos_pernos" class="java.lang.Integer"/>
-		<field name="elementos_ridillos" class="java.lang.Integer"/>
-		<field name="elementos_perillas" class="java.lang.Integer"/>
-		<field name="elementos_asas" class="java.lang.Integer"/>
-		<field name="elementos_base_ruedas" class="java.lang.Integer"/>
-		<field name="elementos_carrete" class="java.lang.Integer"/>
-		<field name="elementos_consumibles" class="java.lang.Integer"/>
-		<field name="elementos_chupon" class="java.lang.Integer"/>
-		<field name="elementos_otros" class="java.lang.Integer"/>
-		<field name="elementos_Nro_Orden" class="java.lang.Integer"/>
-		<field name="encargado_Recepcionado_por" class="java.lang.String"/>
-		<field name="encargado_Servicio" class="java.lang.String"/>
-		<field name="encargado_Falla_reportada" class="java.lang.String"/>
-		<field name="encargado_Nro_Orden" class="java.lang.Integer"/>
 		<field name="orden_Nro_Orden" class="java.lang.Integer"/>
-		<field name="orden_fecha_ingreso" class="java.sql.Date"/>
-		<field name="orden_fecha_salida" class="java.sql.Date"/>
-		<field name="planchado_Cod_p" class="java.lang.Integer"/>
-		<field name="planchado_Cantidad" class="java.lang.String"/>
-		<field name="planchado_Descripcion" class="java.lang.String"/>
-		<field name="planchado_Nro_Orden" class="java.lang.Integer"/>
-		<field name="soldadora_Marca" class="java.lang.String"/>
-		<field name="soldadora_Modelo" class="java.lang.String"/>
-		<field name="soldadora_Nro_Serie" class="java.lang.String"/>
-		<field name="soldadora_Code" class="java.lang.String"/>
-		<field name="soldadora_Email" class="java.lang.String"/>
-		<field name="soldadora_Horometro" class="java.lang.String"/>
-		<field name="soldadora_Diagnostico" class="java.lang.String"/>
-		<field name="soldadora_Foto_Ingreso" class="java.lang.Object"/>
-		<field name="soldadora_Foto_Reparacion" class="java.lang.Object"/>
-		<field name="soldadora_Foto_Salida" class="java.lang.Object"/>
-		<field name="soldadora_Nro_Orden" class="java.lang.Integer"/>
 	</subDataset>
-	<parameter name="Nro_Orden" class="java.lang.Integer">
+	<parameter name="Nro_Orden" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
@@ -702,22 +552,22 @@ WHERE orden.`Nro_Orden` LIKE $P{Nro_Orden}]]>
 	<field name="cliente_Encargado" class="java.lang.String"/>
 	<field name="cliente_Telefono" class="java.lang.String"/>
 	<field name="cliente_Nro_Orden" class="java.lang.Integer"/>
-	<field name="elementos_Antorcha" class="java.lang.Integer"/>
-	<field name="elementos_Porta_electrodo" class="java.lang.Integer"/>
-	<field name="elementos_pinza_masa" class="java.lang.Integer"/>
-	<field name="elementos_cable_acometida" class="java.lang.Integer"/>
-	<field name="elementos_clavija" class="java.lang.Integer"/>
-	<field name="elementos_regulador_gas" class="java.lang.Integer"/>
-	<field name="elementos_manguera_gas" class="java.lang.Integer"/>
-	<field name="elementos_pernos" class="java.lang.Integer"/>
-	<field name="elementos_ridillos" class="java.lang.Integer"/>
-	<field name="elementos_perillas" class="java.lang.Integer"/>
-	<field name="elementos_asas" class="java.lang.Integer"/>
-	<field name="elementos_base_ruedas" class="java.lang.Integer"/>
-	<field name="elementos_carrete" class="java.lang.Integer"/>
-	<field name="elementos_consumibles" class="java.lang.Integer"/>
-	<field name="elementos_chupon" class="java.lang.Integer"/>
-	<field name="elementos_otros" class="java.lang.Integer"/>
+	<field name="elementos_Antorcha" class="java.lang.Boolean"/>
+	<field name="elementos_Porta_electrodo" class="java.lang.Boolean"/>
+	<field name="elementos_pinza_masa" class="java.lang.Boolean"/>
+	<field name="elementos_cable_acometida" class="java.lang.Boolean"/>
+	<field name="elementos_clavija" class="java.lang.Boolean"/>
+	<field name="elementos_regulador_gas" class="java.lang.Boolean"/>
+	<field name="elementos_manguera_gas" class="java.lang.Boolean"/>
+	<field name="elementos_pernos" class="java.lang.Boolean"/>
+	<field name="elementos_ridillos" class="java.lang.Boolean"/>
+	<field name="elementos_perillas" class="java.lang.Boolean"/>
+	<field name="elementos_asas" class="java.lang.Boolean"/>
+	<field name="elementos_base_ruedas" class="java.lang.Boolean"/>
+	<field name="elementos_carrete" class="java.lang.Boolean"/>
+	<field name="elementos_consumibles" class="java.lang.Boolean"/>
+	<field name="elementos_chupon" class="java.lang.Boolean"/>
+	<field name="elementos_otros" class="java.lang.Boolean"/>
 	<field name="elementos_Nro_Orden" class="java.lang.Integer"/>
 	<field name="encargado_Recepcionado_por" class="java.lang.String"/>
 	<field name="encargado_Servicio" class="java.lang.String"/>
@@ -777,10 +627,6 @@ WHERE orden.`Nro_Orden` LIKE $P{Nro_Orden}]]>
 				<textElement verticalAlignment="Bottom"/>
 				<textFieldExpression><![CDATA[$F{soldadora_Nro_Serie}]]></textFieldExpression>
 			</textField>
-			<image>
-				<reportElement x="158" y="0" width="150" height="39" uuid="322534d2-6255-4c21-bd9d-3f32353e3769"/>
-				<imageExpression><![CDATA["D:\\Solmin-Web\\Solmin-paginaweb\\img\\logosolmin.png"]]></imageExpression>
-			</image>
 			<textField>
 				<reportElement x="55" y="9" width="42" height="20" uuid="bf7ccebd-52ab-4098-a224-8595ed943ac2"/>
 				<textElement verticalAlignment="Bottom"/>
@@ -792,11 +638,11 @@ WHERE orden.`Nro_Orden` LIKE $P{Nro_Orden}]]>
 				<text><![CDATA[FECHA DE SALIDA:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="296" y="0" width="112" height="20" uuid="9f5725af-7521-41f2-8ae6-0eeabb93bb45"/>
+				<reportElement x="296" y="0" width="113" height="20" uuid="9f5725af-7521-41f2-8ae6-0eeabb93bb45"/>
 				<text><![CDATA[ORDEN DE SERVICIO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="296" y="40" width="48" height="20" uuid="125fddef-20ce-47a9-a3cf-e2df03d9bad7"/>
+				<reportElement x="296" y="40" width="52" height="20" uuid="125fddef-20ce-47a9-a3cf-e2df03d9bad7"/>
 				<textElement verticalAlignment="Bottom"/>
 				<text><![CDATA[MODELO:]]></text>
 			</staticText>
@@ -863,6 +709,11 @@ WHERE orden.`Nro_Orden` LIKE $P{Nro_Orden}]]>
 			<line>
 				<reportElement x="97" y="131" width="299" height="1" uuid="3aa87c6b-3a2f-4cf7-938d-4643d32d79bd"/>
 			</line>
+			<staticText>
+				<reportElement x="136" y="9" width="130" height="20" uuid="9920d7e5-d314-493f-95f5-406d5ecdba22"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[SOLMIN]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
@@ -1059,7 +910,7 @@ WHERE orden.`Nro_Orden` LIKE $P{Nro_Orden}]]>
 				<reportElement x="136" y="141" width="260" height="1" uuid="5e5b0504-d9aa-4666-8f51-100152d2cfc3"/>
 			</line>
 			<textField>
-				<reportElement x="24" y="169" width="368" height="48" uuid="60f21138-6f3d-46f4-b8d9-383bef2fc901"/>
+				<reportElement x="24" y="169" width="348" height="48" uuid="60f21138-6f3d-46f4-b8d9-383bef2fc901"/>
 				<textFieldExpression><![CDATA[$F{encargado_Falla_reportada}]]></textFieldExpression>
 			</textField>
 			<staticText>
@@ -1305,62 +1156,62 @@ WHERE orden.`Nro_Orden` LIKE $P{Nro_Orden}]]>
 				<text><![CDATA[MANGUERA DE GAS]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="296" y="0" width="103" height="19" uuid="addaca3d-1a7f-4e78-b759-6bfee734f1d8"/>
+				<reportElement x="296" y="0" width="96" height="19" uuid="addaca3d-1a7f-4e78-b759-6bfee734f1d8"/>
 				<textElement verticalAlignment="Bottom"/>
 				<textFieldExpression><![CDATA[$F{cliente_DNI}]]></textFieldExpression>
 			</textField>
 			<componentElement>
-				<reportElement key="table 16" style="table 16" x="17" y="244" width="375" height="165" uuid="6388b25a-4f3b-4a54-be8d-6ec577d74153"/>
+				<reportElement key="table 19" style="table 19" x="12" y="244" width="380" height="140" uuid="7fb538ba-6414-4833-a1d5-fb142c5c75a0"/>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
-					<datasetRun subDataset="planchado" uuid="b2b809e2-67e9-4023-9246-45933d3e4be9">
+					<datasetRun subDataset="Planchado" uuid="1097ce03-e2e6-4cc9-ad70-53b3091649c1">
 						<datasetParameter name="Nro_Orden">
 							<datasetParameterExpression><![CDATA[$P{Nro_Orden}]]></datasetParameterExpression>
 						</datasetParameter>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
-					<jr:column width="43" uuid="d5fc3af2-1005-466f-9601-9a50509d4971">
-						<jr:columnHeader style="table 16_CH" height="30" rowSpan="1">
+					<jr:column width="43" uuid="ce85b70d-008a-4f6d-94ba-04e9bcfb8457">
+						<jr:columnHeader style="table 19_CH" height="14" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="42" height="30" uuid="64d75eff-7cba-4d3e-aadd-4cefa418ab96"/>
+								<reportElement x="1" y="0" width="42" height="13" uuid="019b3179-01bf-446f-b9b3-99170411d48f"/>
 								<textElement textAlignment="Center"/>
 								<text><![CDATA[COD. P]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:detailCell style="table 16_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table 19_TD" height="20" rowSpan="1">
 							<textField>
-								<reportElement x="0" y="0" width="42" height="20" uuid="e742c8ba-d71b-48f6-8796-6c87a5249ff4"/>
+								<reportElement x="0" y="0" width="43" height="20" uuid="53a2aaa4-6435-4af7-a8cc-3448cca0ce41"/>
 								<textElement textAlignment="Center"/>
 								<textFieldExpression><![CDATA[$F{planchado_Cod_p}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="36" uuid="5d776032-8fe5-4487-88dd-3e14425071a6">
-						<jr:columnHeader style="table 16_CH" height="30" rowSpan="1">
+					<jr:column width="43" uuid="7b24567b-fc09-49c9-a730-71da4fd965ba">
+						<jr:columnHeader style="table 19_CH" height="14" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="36" height="30" uuid="1e4cb927-be7e-416a-a0f5-2ec74fa85d8f"/>
+								<reportElement x="0" y="0" width="43" height="13" uuid="27d912ea-76d2-4a57-a84a-c9694c7de2e8"/>
 								<textElement textAlignment="Center"/>
-								<text><![CDATA[CANT,]]></text>
+								<text><![CDATA[CANT.]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:detailCell style="table 16_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table 19_TD" height="20" rowSpan="1">
 							<textField>
-								<reportElement x="0" y="0" width="36" height="20" uuid="abe0c7ed-5e28-4b83-9347-7c9d22004318"/>
+								<reportElement x="2" y="0" width="41" height="20" uuid="582524a2-122a-4bf6-8283-6dac68548584"/>
 								<textElement textAlignment="Center"/>
 								<textFieldExpression><![CDATA[$F{planchado_Cantidad}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="295" uuid="4129c050-e636-49b7-95b1-050f0f803448">
-						<jr:columnHeader style="table 16_CH" height="30" rowSpan="1">
+					<jr:column width="293" uuid="15cd3345-16d0-49cf-a591-b86ccb1bd328">
+						<jr:columnHeader style="table 19_CH" height="14" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="295" height="30" uuid="27042000-5ab4-4c38-9965-b8d7a6f017c4"/>
+								<reportElement x="0" y="0" width="293" height="13" uuid="da5ed07b-2476-4b7b-b1b3-3971fdb52768"/>
 								<textElement textAlignment="Center"/>
-								<text><![CDATA[DESCRIPCIÓN]]></text>
+								<text><![CDATA[DESCRIPCION]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:detailCell style="table 16_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table 19_TD" height="20" rowSpan="1">
 							<textField>
-								<reportElement x="0" y="0" width="295" height="20" uuid="4815d900-4121-4c81-809f-436ffac5c038"/>
+								<reportElement x="0" y="0" width="293" height="20" uuid="c3247573-76cb-4106-a6b4-6e09cdca2fa9"/>
 								<textElement textAlignment="Center"/>
 								<textFieldExpression><![CDATA[$F{planchado_Descripcion}]]></textFieldExpression>
 							</textField>
@@ -1369,57 +1220,57 @@ WHERE orden.`Nro_Orden` LIKE $P{Nro_Orden}]]>
 				</jr:table>
 			</componentElement>
 			<componentElement>
-				<reportElement key="table 17" style="table 17" x="422" y="257" width="366" height="152" uuid="c96fef70-f966-46d0-8569-c179559f9a3a"/>
+				<reportElement key="table 20" style="table 20" x="421" y="257" width="367" height="140" uuid="e7670516-9c8d-4cbf-a128-f87c2c565515"/>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
-					<datasetRun subDataset="accesorios" uuid="fcf0ad59-5e92-4635-9fb2-029201992ab5">
+					<datasetRun subDataset="Accesorios" uuid="e70a77d6-d177-4758-ba40-9e250250bdbc">
 						<datasetParameter name="Nro_Orden">
 							<datasetParameterExpression><![CDATA[$P{Nro_Orden}]]></datasetParameterExpression>
 						</datasetParameter>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
-					<jr:column width="39" uuid="e3187a86-ec3a-49bc-8f81-0f9ff44e5907">
-						<jr:columnHeader style="table 17_CH" height="30" rowSpan="1">
+					<jr:column width="44" uuid="4563b8b6-49bd-48d4-8d8b-4c9a3a4ac575">
+						<jr:columnHeader style="table 20_CH" height="16" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="39" height="30" uuid="852dd704-89ac-4ea0-9a2c-5fe3e1049222"/>
+								<reportElement x="0" y="0" width="44" height="14" uuid="8ee01df2-abc4-4ae3-8333-aa90cc25e861"/>
 								<textElement textAlignment="Center"/>
 								<text><![CDATA[COD. P]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:detailCell style="table 17_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table 20_TD" height="20" rowSpan="1">
 							<textField>
-								<reportElement x="0" y="0" width="39" height="20" uuid="6a0ad897-e20f-4bb4-ad98-e5e98dcae302"/>
+								<reportElement x="0" y="0" width="44" height="20" uuid="b6a96dba-9ab7-48c2-a81f-511866fd70f0"/>
 								<textElement textAlignment="Center"/>
 								<textFieldExpression><![CDATA[$F{accesorios_cod_p}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="38" uuid="9a2358d7-c67e-42b1-94c4-3971015350cc">
-						<jr:columnHeader style="table 17_CH" height="30" rowSpan="1">
+					<jr:column width="41" uuid="5d797ff9-8b59-4ec8-9c2a-07d79443f351">
+						<jr:columnHeader style="table 20_CH" height="16" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="38" height="30" uuid="597544f5-b5b4-4348-ac87-c0e438618009"/>
+								<reportElement x="0" y="0" width="40" height="14" uuid="3b288044-9a52-445f-ae7b-b3178c80d0b9"/>
 								<textElement textAlignment="Center"/>
-								<text><![CDATA[CANT,]]></text>
+								<text><![CDATA[CANT.]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:detailCell style="table 17_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table 20_TD" height="20" rowSpan="1">
 							<textField>
-								<reportElement x="0" y="0" width="38" height="20" uuid="f2d5cc97-b9c7-4b16-a67f-289b25c47cd6"/>
+								<reportElement x="0" y="0" width="40" height="20" uuid="b80880d9-e527-4561-a493-b80fdfaeef3f"/>
 								<textElement textAlignment="Center"/>
 								<textFieldExpression><![CDATA[$F{accesorios_Cantidad}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="290" uuid="9885613f-8337-42a9-aec3-eeb10e0f0e6f">
-						<jr:columnHeader style="table 17_CH" height="30" rowSpan="1">
+					<jr:column width="280" uuid="0156de54-0adf-4163-a215-aca2d3f00347">
+						<jr:columnHeader style="table 20_CH" height="16" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="290" height="30" uuid="41d4e6ee-71f1-4679-be39-0b5f29d4d940"/>
+								<reportElement x="0" y="0" width="280" height="14" uuid="64c14077-306c-4840-9a7b-4ec0b05aaa10"/>
 								<textElement textAlignment="Center"/>
-								<text><![CDATA[DESCRIPCIÓN]]></text>
+								<text><![CDATA[DESCRIPCION]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:detailCell style="table 17_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table 20_TD" height="20" rowSpan="1">
 							<textField>
-								<reportElement x="0" y="0" width="290" height="20" uuid="f807941e-dbbb-44dc-85c2-641fce253558"/>
+								<reportElement x="0" y="0" width="280" height="20" uuid="58da07cd-05e9-485d-91ba-14dd47b7c666"/>
 								<textElement textAlignment="Center"/>
 								<textFieldExpression><![CDATA[$F{accesorios_Descripcion}]]></textFieldExpression>
 							</textField>
